@@ -1,0 +1,162 @@
+ #bgfade{
+    background: linear-gradient(to bottom, #cee0e6, rgba(255, 255, 255, 0.795));
+  /* 
+    #cee0e6 adalah warna latar belakang asli, 
+    rgba(206, 224, 230, 0) adalah warna latar belakang dengan tingkat kejernihan (alpha) 0
+  */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+ }
+ 
+ .hidden.secondary.menu {
+     display: none;
+ }
+
+ .masthead.segment {
+     min-height: 899px;
+ }
+
+ .masthead .logo.item img {
+     margin-right: 1em;
+ }
+
+ .masthead .ui.menu .ui.button {
+     margin-left: 0.5em;
+ }
+
+ .masthead h1.ui.header {
+     margin-top: 3em;
+     margin-bottom: 0em;
+     font-size: 4em;
+     font-weight: normal;
+ }
+
+ .masthead h2 {
+     font-size: 1.7em;
+     font-weight: normal;
+ }
+
+ .ui.vertical.stripe {
+     padding: 8em 0em;
+ }
+
+ .ui.vertical.stripe h3 {
+     font-size: 2em;
+ }
+
+ .ui.vertical.stripe .button+h3,
+ .ui.vertical.stripe p+h3 {
+     margin-top: 3em;
+ }
+
+ .ui.vertical.stripe .floated.image {
+     clear: both;
+ }
+
+ .ui.vertical.stripe p {
+     font-size: 1.33em;
+ }
+
+ .ui.vertical.stripe .horizontal.divider {
+     margin: 3em 0em;
+ }
+
+ .quote.stripe.segment {
+     padding: 0em;
+ }
+
+ .quote.stripe.segment .grid .column {
+     padding-top: 5em;
+     padding-bottom: 5em;
+ }
+
+ .footer.segment {
+     padding: 5em 0em;
+ }
+
+ .secondary.menu .toc.item {
+     display: none;
+ }
+
+ .banner {
+     height: 899px;
+     width: 100%;
+     background-color: rgb(31, 31, 31);
+     margin-top: 15px;
+ }
+
+ .ui.primary.button {
+     color: black;
+     background-color: rgb(151, 255, 151);
+     border-radius: 0%;
+     width: 200px;
+     height: 50px;
+     font-size: 17px;
+     
+ }
+
+ @media only screen and (max-width: 700px) {
+     .ui.fixed.menu {
+         display: none !important;
+     }
+
+     .secondary.menu #item1 {
+         display: none;
+     }
+
+     .secondary.menu .toc.item {
+         display: block;
+     }
+
+     .masthead.segment {
+         min-height: 350px;
+     }
+
+     .masthead h1.ui.header {
+         font-size: 2em;
+         margin-top: 1.5em;
+     }
+
+     .masthead h2 {
+         margin-top: 0.5em;
+         font-size: 1.5em;
+     }
+ }
+
+ #h1 {
+     font-family: 'Roboto', sans-serif;
+     font-size: 40px;
+     font-weight: bold;
+     color: #17667f;
+ }
+
+ #p {
+     font-family: 'Roboto', sans-serif;
+     color: #17667f;
+     font-size: 28px;
+ }
+
+ #custom{
+    width: 700px;
+ }
+
+ #custinput{
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+#custbutton{
+    height: 50px;
+    border-radius: 10px;
+    background-color: #F5C0BF;
+    color: #1C667F;
+    font-size: 18px;
+    
+}
+
+#custinput2{
+    border-radius: 10px;
+    border: 2px solid rgba(28, 102, 127, 0.4);
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
