@@ -25,13 +25,13 @@ $router->get('/', function()
 });
 $router->group(['prefix' => 'auth'], function () use ($router) {
     //rute untuk login
-    $router->post('login', 'AuthController@login');
+    $router->post('/login', 'AuthController@login');
 
     //rute untuk logout
-    $router->post('logout', 'AuthController@logout');
+    $router->post('/logout', 'AuthController@logout');
 });
 //rute untuk register
-$router->post('/register', 'UserController@register');
+$router->post('/register', 'RegisterController@register');
 
 //rute middleware untuk memastikan user yang mengakses sudah login
 $router->group(['middleware' => 'auth.api'], function () use ($router) {
@@ -40,3 +40,4 @@ $router->group(['middleware' => 'auth.api'], function () use ($router) {
     $router->patch('/users/{id}', 'UserController@updateDatUser');
     $router->delete('/users/{id}', 'UserController@deleteDataUser');
 });
+$router->post('/uploadfoto', 'BuildingController@uploadfoto');

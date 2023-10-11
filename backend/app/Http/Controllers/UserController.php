@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -16,14 +17,22 @@ class UserController extends Controller
      */
     public function register(Request $request)
     {
-        $this->validate($request, User::rules());
-        if (User::where('email', $request->input('email'))->exists()) {
-            return response()->json(
-                [
-                    'success' => false,
-                    'message' => 'Email sudah terdaftar',
-                ],400
-            );
+        // Validasi data dari request
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'phone_number' => 'required',
+            'roles' => 'required',
+            'password' => 'required',
+        ]);
+
+        // Cek apakah validasi gagal
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Validasi gagal',
+                'errors' => $validator->errors(),
+            ], 400);
         }
         $register = new User();
         $register->name = $request->name;
@@ -53,6 +62,7 @@ class UserController extends Controller
                 ],400
             );
         }
+        
     }
 
     public function getDataUser()
@@ -90,18 +100,37 @@ class UserController extends Controller
         
     }
         
-    
     public function updateDataUser(Request $request, $id)
         {
             $user = User::find($id);
 
             if (!$user) {
-                return response()->json(['message' => 'User Tidak Ditemukan'], 404);
+                return response()->json(['message' => 'Pengguna tidak ditemukan'], 404);
             }
 
-            $user->update($request->all());
+            $this->validate($request, [
+                'name' => 'string',
+                'phone_number' => 'string',
+                'password' => 'string',
+            ]);
 
-            return response()->json(['message' => 'User Berhasil Diperbarui', 'data' => $user]);
+            if ($request->has('name')) {
+                $user->name = $request->input('name');
+            }
+
+            if ($request->has('phone_number')) {
+                $user->phone_number = $request->input('phone_number');
+            }
+
+            if ($request->has('password')) {
+                $user->password = Hash::make($request->input('password'));
+            }
+
+            if ($user->save()) {
+                return response()->json(['message' => 'Data pengguna berhasil diperbarui', 'data' => $user]);
+            } else {
+                return response()->json(['message' => 'Gagal memperbarui data pengguna'], 500);
+            }
         }
     public function deleteDataUser($id){
         $user = User::find($id);

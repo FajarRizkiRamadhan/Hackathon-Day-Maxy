@@ -19,7 +19,7 @@ class Product extends Model implements AuthenticatableContract, AuthorizableCont
      *
      * @var string[]
      */
-    protected $table = 'products';
+    protected $table = 'buildings';
     protected $fillable = [
         'name', 
         'capacity',
