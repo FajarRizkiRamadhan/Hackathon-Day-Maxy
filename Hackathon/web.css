@@ -76,13 +76,15 @@
  }
 
  .ui.primary.button {
-     color: black;
-     background-color: rgb(151, 255, 151);
-     border-radius: 0%;
-     width: 200px;
-     height: 50px;
-     font-size: 17px;
+     color: white;
+     background-color: #cee0e6;
+     border-radius: 10px;
+ }
 
+  .ui.secondary.button {
+     color: white;
+     background-color: #F5C0BF;
+     border-radius: 10px;
  }
 
  @media only screen and (max-width: 970px) {
@@ -178,11 +180,26 @@
     margin-bottom: 25px;
 }
 
+#custbutton4{
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    background-color: #F5C0BF;
+    color: white;
+    font-size: 20px;
+}
+
  #box{
     border-radius: 10px;
     background-color: rgba(245, 192, 191, 0.39);
     box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 20px;
+ }
+
+  #box2{
+    border-radius: 10px;
+    background-color: #cee0e6;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 80px;
  }
 
  #headmenu{
@@ -206,4 +223,23 @@
  .ui.search .icon.input{
     width: 500px;
     height: 45px;
+ }
+
+ .ui.secondary.vertical.menu .item{
+    font-size: 17px;
+ }
+
+  .ui.secondary.vertical.menu .button{
+    border-radius: 0px;
+    background-color: #F5C0BF;
+    color: #17667f;
+    margin-bottom: 25px;
+    font-size: 17px;
+ }
+
+ #chart2{
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
  }
