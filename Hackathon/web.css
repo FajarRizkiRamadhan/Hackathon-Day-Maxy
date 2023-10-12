@@ -1,20 +1,16 @@
- #bgfade{
-    background: linear-gradient(to bottom, #cee0e6, rgba(255, 255, 255, 0.795));
-  /* 
-    #cee0e6 adalah warna latar belakang asli, 
-    rgba(206, 224, 230, 0) adalah warna latar belakang dengan tingkat kejernihan (alpha) 0
-  */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
+ #bgfade {
+     background: linear-gradient(to bottom, #cee0e6, rgb(255, 255, 255));
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: 100% 100%;
  }
- 
+
  .hidden.secondary.menu {
      display: none;
  }
 
  .masthead.segment {
-     min-height: 899px;
+     min-height: 900px;
  }
 
  .masthead .logo.item img {
@@ -79,24 +75,19 @@
      display: none;
  }
 
- .banner {
-     height: 899px;
-     width: 100%;
-     background-color: rgb(31, 31, 31);
-     margin-top: 15px;
- }
-
  .ui.primary.button {
-     color: black;
-     background-color: rgb(151, 255, 151);
-     border-radius: 0%;
-     width: 200px;
-     height: 50px;
-     font-size: 17px;
-     
+     color: white;
+     background-color: #cee0e6;
+     border-radius: 10px;
  }
 
- @media only screen and (max-width: 700px) {
+  .ui.secondary.button {
+     color: white;
+     background-color: #F5C0BF;
+     border-radius: 10px;
+ }
+
+ @media only screen and (max-width: 970px) {
      .ui.fixed.menu {
          display: none !important;
      }
@@ -137,26 +128,118 @@
      font-size: 28px;
  }
 
- #custom{
-    width: 700px;
+ #custom {
+     width: 700px;
  }
 
- #custinput{
-    border-radius: 10px;
+#custom2 {
+    width: 1300px;
+}
+
+#custom3 {
+    width: 1300px;
+}
+
+ #custinput {
+     border-radius: 10px;
+     box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+  #custinput2 {
+     border-radius: 10px;
+     border: 2px solid rgba(28, 102, 127, 0.4);
+     box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ #custbutton {
+     height: 50px;
+     border-radius: 10px;
+     background-color: #F5C0BF;
+     color: #1C667F;
+     font-size: 18px;
+ }
+
+#custbutton2 {
     box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     height: 50px;
+     width: 300px;
+     border-radius: 10px;
+     background-color: rgba(245, 192, 191, 0.39);
+     color: #1C667F;
+     font-size: 18px;
+     float: left;
  }
 
-#custbutton{
-    height: 50px;
-    border-radius: 10px;
+#custbutton3{
+    width: 250px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    background-color: #cee0e6;
+    color: #17667f;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+#custbutton4{
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
     background-color: #F5C0BF;
-    color: #1C667F;
-    font-size: 18px;
-    
+    color: white;
+    font-size: 20px;
 }
 
-#custinput2{
+ #box{
     border-radius: 10px;
-    border: 2px solid rgba(28, 102, 127, 0.4);
-    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+    background-color: rgba(245, 192, 191, 0.39);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+ }
+
+  #box2{
+    border-radius: 10px;
+    background-color: #cee0e6;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 80px;
+ }
+
+ #headmenu{
+    margin-top: 25px;
+ }
+
+ #isimenu{
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-weight: 600;
+ }
+
+ #isiplace{
+    text-align: left;
+ }
+
+ .ui.search{
+    float: left;
+ }
+
+ .ui.search .icon.input{
+    width: 500px;
+    height: 45px;
+ }
+
+ .ui.secondary.vertical.menu .item{
+    font-size: 17px;
+ }
+
+  .ui.secondary.vertical.menu .button{
+    border-radius: 0px;
+    background-color: #F5C0BF;
+    color: #17667f;
+    margin-bottom: 25px;
+    font-size: 17px;
+ }
+
+ #chart2{
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+ }

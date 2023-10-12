@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workfrom</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+     <link rel="stylesheet" type="text/css" href="web.css">
+    <style>
+        ol {
+            font-size: 20px;
+        }
+
+        .li {
+            font-weight: 800;
+        }
+
+        h1 {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        canvas {
+            border: 1px solid grey;
+            height: 400;
+            width: 400;
+        }
+
+        .highcharts-figure,
+        .highcharts-data-table table {
+            min-width: 310px;
+            max-width: 800px;
+            max-width: 1em auto;
+        }
+
+        #container {
+            height: 400px;
+        }
+
+        .highcharts-data-table table {
+            border-collapse: collapse;
+            border: 1px solid #ebebeb;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            columns: #555;
+        }
+
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table td,
+        .highcharts-data-table th,
+        .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table thead tr,
+        .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pusher">
+
+        <div class="ui large left fixed secondary vertical  menu" id="bgfade">
+            <div class="container">
+                <div class="ui one column centered grid" style="margin-bottom: 20px;">
+                    <div class="column" style="margin-bottom: 20px;">
+                        <div class="item">
+                            <a href="#">
+                                <img class="ui image" src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
+                                    style="height: 35px; margin-top: 20px;">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <a href="#">
+                            <div class="header" style="font-size: 25px; color: black;"><i class="user circle icon"
+                                    style="margin-right: 10px;"></i>Admin</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item" style="margin: 30px;">
+                <div class="header" style="font-size: 20px;">Admin</div>
+                <div class="menu">
+                    <a href="admin.html" class="item">Dashboard</a>
+                    <a href="admin-customer.html" class="item">Customer</a>
+                    <a href="admin-usecase.html" class="item">Use Case Detail</a>
+                    <a href="admin-properti.html" class="item">Properti</a>
+                </div>
+            </div>
+            <div class="item" style="margin: 30px;">
+                <div class="header" style="font-size: 20px;">Layanan</div>
+                <div class="menu">
+                    <a href="admin-pesan.html" class="item">Pesan Sekarang</a>
+                    <a href="admin-lokasi.html" class="item">Grafik Lihat Lokasi</a>
+                    <a href="admin-blog.html" class="item">Grafik Blog</a>
+                </div>
+            </div>
+
+            <div class="ui one column centered grid">
+                <div class="column">
+                    <a href="#">
+                        <button class="ui fluid button"><b>Log Out</b></button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" style="margin-left: 250px; margin-top: 10px;">
+            <div class="ui vertical masthead center aligned segment">
+                <div class="container">
+                    <div class="ui huge breadcrumb" style="float: right; margin-right: 50px; margin-top: 35px;">
+                        <a href="admin.html" class="section">Admin</a>
+                        <i class="right angle icon divider"></i>
+                        <a class="active section" style="color: black;">Grafik Lihat Lokasi</a>
+                    </div>
+                    <h1 style="float: left; margin-left: 50px; font-size: 40px;">Grafik Lihat Lokasi</h1>
+                    <div class="container" style="margin-left: 50px; margin-right: 50px;">
+                        <a>
+                            <button class="ui fluid button" id="custbutton4" style="font-size: 30px;">
+                                Banyak Detail Lokasi Dibuka <div>2023</div>
+                            </button>
+                        </a><br>
+                        <div class="container" style="background-color: #d9e9ef;">
+                            <br>
+                            <div class="ui centered one column grid" style="padding-right: 100px;">
+                                <div class="column">
+                                    <center>
+                                         <figure class="highcharts-figure">
+                                             <div id="chart1"></div>
+                                         </figure>
+                                    </center>
+                                     
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+=
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="visibility.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="transition.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="chartjs.js"></script>
+    <script src="highchart.js"></script>
+</body>
+
+</html>

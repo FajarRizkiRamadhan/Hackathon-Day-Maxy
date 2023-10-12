@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Workfrom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="web.css">
+</head>
+
+<body>
+
+    <!-- Page Contents -->
+    <div class="pusher">
+
+        <div class="ui large left fixed secondary vertical  menu" id="bgfade">
+            <div class="container">
+                <div class="ui one column centered grid" style="margin-bottom: 20px;">
+                    <div class="column" style="margin-bottom: 20px;">
+                        <div class="item">
+                            <a href="#">
+                                <img class="ui image" src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
+                                    style="height: 35px; margin-top: 20px;">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="columns" >
+                        <a href="#">
+                              <div class="header" style="font-size: 25px; color: black;"><i class="user circle icon"
+                                      style="margin-right: 10px;"></i>Admin</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item" style="margin: 30px;">
+                <div class="header" style="font-size: 20px;">Admin</div>
+                <div class="menu">
+                    <a href="admin.html" class="item">Dashboard</a>
+                    <a href="admin-customer.html" class="item">Customer</a>
+                    <a href="admin-usecase.html" class="item">Use Case Detail</a>
+                    <a href="admin-properti.html" class="item">Properti</a>
+                </div>
+            </div>
+            <div class="item" style="margin: 30px;">
+                <div class="header" style="font-size: 20px;">Layanan</div>
+                <div class="menu">
+                    <a href="admin-pesan.html" class="item">Pesan Sekarang</a>
+                    <a href="admin-lokasi.html" class="item">Grafik Lihat Lokasi</a>
+                    <a href="admin-blog.html" class="item">Grafik Blog</a>
+                </div>
+            </div>
+
+            <div class="ui one column centered grid">
+                <div class="column">
+                    <a href="#">
+                        <button class="ui fluid button"><b>Log Out</b></button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" style="margin-left: 250px; margin-top: 10px;">
+              <div class="ui equal width stackable grid">
+                <div class="column" id="box2">
+                    <i class="mouse pointer icon" style="float: right; font-size: 35px; margin-top: 10px;"></i>
+                    <h1 style="font-size: 30px; margin-left: 10px;">0<div>Pesan Sekarang</div>
+                    </h1><br>
+                    <a href="admin-pesan.html">
+                        <button class="ui fluid button" style="background-color: inherit; font-size: 20px;">Details <i
+                                class="arrow circle right icon"></i></button>
+                    </a> 
+                </div>
+                <div class="column" id="box2">
+                    <i class="alternate map marker icon" style="float: right; font-size: 35px; margin-top: 10px;"></i>
+                    <h1 style="font-size: 30px; margin-left: 10px;">0<div>Grafik Lihat Lokasi</div>
+                    </h1><br>
+                    <a href="admin-lokasi.html">
+                         <button class="ui fluid button" style="background-color: inherit; font-size: 20px;">Details <i
+                                 class="arrow circle right icon"></i></button>
+                    </a>
+                </div>
+                <div class="column" id="box2">
+                    <i class="edit icon" style="float: right; font-size: 35px; margin-top: 10px;"></i>
+                    <h1 style="font-size: 30px; margin-left: 10px;">0<div>Grafik Blog</div>
+                    </h1><br>
+                    <a href="admin-blog.html">
+                          <button class="ui fluid button" style="background-color: inherit; font-size: 20px;">Details <i
+                                  class="arrow circle right icon"></i></button>
+                    </a>
+                </div>
+              </div>
+
+                <div style="margin-left: 40px;">
+                    <h3 style="color: #17667f;">Dashboard</h3>
+                </div>
+
+                <div class="ui one column grid">
+                    <div class="column" style="background-color: #cee0e6; margin-top: 50px; margin-left: 150px; margin-right: 150px; border-radius: 10px;">
+                        <div class="container" style="margin: 80px;">
+                            <h1 style="font-size: 50px;">Selamat Datang, Admin!</h1>
+                            <h3 style="color: #17667f; font-size: 25px;">Terwujudnya kebahagiaan bagi pekerja dalam
+                                menemukan ruang kerja yang sesuai <div>dengan
+                                    kebutuhan.</div>
+                                </h3>
+                        </div>
+                        
+                    </div>
+                </div>
+        </div>
+
+     
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="visibility.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="transition.js"></script>
+    <script>
+        $(document)
+            .ready(function () {
+
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item');
+
+            });
+    </script>
+    <script>
+        $('.ui.dropdown')
+            .dropdown();
+
+        $('.menu .item').tab();
+    </script>
+</body>
+
+</html>
