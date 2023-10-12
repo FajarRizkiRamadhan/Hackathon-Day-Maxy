@@ -33,39 +33,43 @@
                     </div><br><br><br><br>
 
                     <div class="ui container" id="custom">
-                        <form class="ui huge form">
+                        <form class="ui huge form" id="registrationForm">
                             <div class="field">
                                 <div class="ui left icon input">
                                     <i class="user icon" style="color: #1C667F;"></i>
-                                    <input type="text" name="nama" placeholder="Nama Anda" id="custinput2">
+                                    <input type="text" name="name" placeholder="Nama Anda">
+                                </div>
+                            </div><br>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="envelope icon" style="color: #1C667F;"></i>
+                                    <input type="email" name="email" placeholder="E-mail" >
+                                </div>
+                            </div><br>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="whatsapp icon" style="color: #1C667F; font-size: 23px;"></i>
+                                    <input type="tel" name="phone_number" placeholder="Nomor Whatsapp">
                                 </div>
                             </div><br>
                             <div class="field">
                                 <div class="ui left icon input">
                                     <i class="building icon" style="color: #1C667F;"></i>
-                                    <input type="text" name="perusahaan" placeholder="Nama Perusahaan" id="custinput2">
+                                    <select name="roles">
+                                        <option value="customer">Customer</option>
+                                        <option value="owner">Owner</option>
+                                    </select>
                                 </div>
                             </div><br>
-                             <div class="field">
-                                 <div class="ui left icon input">
-                                     <i class="whatsapp icon" style="color: #1C667F; font-size: 23px;"></i>
-                                     <input type="tel" name="nohp" placeholder="Nomor Whatsapp" id="custinput2">
-                                 </div>
-                             </div><br>
-                             <div class="field">
-                                 <div class="ui left icon input">
-                                     <i class="envelope icon" style="color: #1C667F;"></i>
-                                     <input type="email" name="email" placeholder="E-mail" id="custinput2">
-                                 </div>
-                             </div><br>
-                             <div class="field">
+                            <div class="field">
                                  <div class="ui left icon input">
                                      <i class="lock icon" style="color: #1C667F;"></i>
-                                     <input type="password" name="password" placeholder="Password" id="custinput2">
+                                     <input type="password" name="password" placeholder="Password" >
                                  </div>
                              </div><br>
-                            <button class="ui fluid button" type="submit" id="custbutton"><b>Buat Akun</b></button>
+                            <button class="ui fluid button" type="submit"><b>Buat Akun</b></button>
                         </form><br><br><br>
+                        <div id="message-container"></div>
 
                         <div class="ui one column centered grid" style="margin-bottom: 40px;">
                             <b style="font-size: 17px;">Sudah Memiliki Akun? <a href="login.html"
@@ -75,9 +79,52 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const messageContainer = document.getElementById('message-container');
+    const registrationForm = document.getElementById('registrationForm');
+    const nameInput = registrationForm.querySelector('input[name="name"]');
+    const emailInput = registrationForm.querySelector('input[name="email"]');
+    const phoneInput = registrationForm.querySelector('input[name="phone_number"]');
+    const rolesInput = registrationForm.querySelector('select[name="roles"]');
+    const passwordInput = registrationForm.querySelector('input[name="password"]');
 
+    registrationForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append('name', nameInput.value);
+        formData.append('email', emailInput.value);
+        formData.append('phone_number', phoneInput.value);
+        formData.append('roles', rolesInput.value);
+        formData.append('password', passwordInput.value);
+
+        fetch('http://localhost:8000/register', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle respons dari server
+            console.log(data);
+            if (data.success) {
+                window.location.href = "login.html"; // Redirect ke halaman login
+                // Registrasi berhasil, tampilkan pesan sukses
+                messageContainer.innerHTML = '<div class="success-message">Registrasi berhasil! Anda dapat login sekarang.</div>';
+            } else {
+                // Registrasi gagal, tampilkan pesan kesalahan
+                messageContainer.innerHTML = '<div class="error-message">Registrasi gagal: ' + data.message + '</div>';
+            }
+        })
+        .catch(error => {
+            // Handle kesalahan jika ada
+            console.error(error);
+        });
+    });
+});
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="visibility.js"></script>
     <script src="sidebar.js"></script>

@@ -33,15 +33,15 @@
                     </div><br><br><br><br>
 
                     <div class="ui container" id="custom">
-                        <form class="ui huge form">
+                        <form class="ui huge form" id="loginForm">
                             <div class="field">
                                 <label>Alamat E-mail</label>
-                                <input type="email" name="email" placeholder="E-mail" id="custinput">
+                                <input type="email" name="email" placeholder="E-mail" id="custinputemail">
                             </div><br>
                             <div class="field">
                                 <label>Password <span style="float: right; color: #1C667F;"><a href="#">Lupa
                                             Password</a></span></label>
-                                <input type="password" name="password" placeholder="Password" id="custinput">
+                                <input type="password" name="password" placeholder="Password" id="custinputpassword">
                             </div>
                             <div class="field">
                                 <div class="ui checkbox">
@@ -52,6 +52,8 @@
                             <button class="ui fluid button" type="submit" id="custbutton"><b>Mulai
                                     Sekarang!</b></button>
                         </form><br><br><br>
+                        <div id="message-container"></div>
+
                         <div class="ui one column centered grid">
                             <b style="font-size: 17px;">Or Sign Up with</b>
                         </div><br><br>
@@ -78,6 +80,50 @@
         </div>
 
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const messageContainer = document.getElementById('messageContainer');
+            const loginForm = document.getElementById('loginForm');
+
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Ambil data dari formulir
+                const email = loginForm.querySelector('[name="email"]').value;
+                const password = loginForm.querySelector('[name="password"]').value;
+
+                // Buat objek FormData
+                let formData = new FormData();
+                formData.append('email', email);
+                formData.append('password', password);
+                
+                // Konfigurasi permintaan fetch
+                const requestOptions = {
+                    method: 'POST',
+                    body: formData,
+                };
+
+                // Kirim permintaan login
+                fetch('http://localhost:8000/auth/login', requestOptions)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data); // Handle respons dari server, seperti mengarahkan ke halaman beranda jika login berhasil
+                        if (data.success) {
+                            window.location.href = "homepage.html"; // Redirect ke halaman login
+                            // Registrasi berhasil, tampilkan pesan sukses
+                            messageContainer.innerHTML = '<div class="success-message">Registrasi berhasil! Anda dapat login sekarang.</div>';
+                        } else {
+                            // Registrasi gagal, tampilkan pesan kesalahan
+                            messageContainer.innerHTML = '<div class="error-message">Registrasi gagal: ' + data.message + '</div>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+          
+                    });
+                });
+            });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="visibility.js"></script>
