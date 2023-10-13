@@ -53,13 +53,11 @@
                                 </div>
                             </div><br>
                             <div class="field">
-                                <div class="ui left icon input">
-                                    <i class="building icon" style="color: #1C667F;"></i>
-                                    <select name="roles">
-                                        <option value="customer">Customer</option>
-                                        <option value="owner">Owner</option>
-                                    </select>
-                                </div>
+                                <select class="ui dropdown" name="roles">
+                                    <option value="">Pilih Jenis Registrasi</option>
+                                    <option value="customer">Customer</option>
+                                    <option value="owner">Owner</option>
+                                </select>
                             </div><br>
                             <div class="field">
                                  <div class="ui left icon input">
@@ -67,7 +65,7 @@
                                      <input type="password" name="password" placeholder="Password" >
                                  </div>
                              </div><br>
-                            <button class="ui fluid button" type="submit"><b>Buat Akun</b></button>
+                            <button class="ui fluid button" type="submit" id="custbutton"><b>Buat Akun</b></button>
                         </form><br><br><br>
                         <div id="message-container"></div>
 

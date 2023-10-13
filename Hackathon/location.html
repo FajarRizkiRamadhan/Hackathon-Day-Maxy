@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Workfrom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="web.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+
+         function gtag() {
+             dataLayer.push(arguments);
+         }
+         gtag('js', new Date());
+
+         gtag('config', 'G-4E6TG4R2SS');
+     </script>
+</head>
+
+<body>
+
+    <!-- Following Menu -->
+    <div class="ui top fixed hidden massive secondary menu" style="padding: 15px; background-color: #cee0e6;">
+        <div class="ui container">
+            <a href="homepage.html">
+                <img src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
+                    style="height: 27px; margin-top: 12px;">
+            </a>
+            <div class="right menu">
+                <a href="ordernow.html" class="item"><b>Order Now</b></a>
+                <div class="ui dropdown item" id="item1">
+                    <b>Location</b><i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">Medan</a>
+                        <a href="#" class="item">Jakarta Selatan</a>
+                    </div>
+                </div>
+                <div class="ui dropdown item" id="item2">
+                    <b>Use Case</b><i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">Event</a>
+                        <a href="#" class="item">Meeting</a>
+                        <a href="#" class="item">Photoshoot</a>
+                        <a href="#" class="item">Videoshoot</a>
+                    </div>
+                </div>
+                <a href="#" class="item"><b>Help</b></a>
+                <a href="#" class="item"><b>Blog</b></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="ui secondary vertical sidebar menu" id="bgfade">
+        <div class="container">
+            <a href="ordernow.html" class="item" style="margin-top: 350px;">
+                <h3><b>Order Now</b></h3>
+            </a>
+            <a href="#" class="item">
+                <h3><b>Location<i class="dropdown icon"></i></b></h3>
+            </a>
+            <a href="#" class="item">
+                <h3><b>Use Case<i class="dropdown icon"></i></b></h3>
+            </a>
+            <a href="#" class="item">
+                <h3><b>Help</b></h3>
+            </a>
+            <a href="#" class="item">
+                <h3><b>Blog</b></h3>
+            </a>
+        </div>
+    </div>
+
+    <!-- Page Contents -->
+    <div class="pusher" id="bgfade">
+
+        <div class="ui vertical masthead center aligned segment">
+            <div class="ui container" id="custom2">
+                <div class="ui massive secondary menu">
+                    <a href="#" class="toc item" style="margin-right: 0px;">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a href="#" class="item" style="margin-left: 0px; font-size: 25px;">
+                        <i class="user circle icon"></i>
+                    </a>
+                    <div class="left menu">
+                        <a href="ordernow.html" class="item" id="item1"><b>Order Now</b></a>
+                        <div class="ui dropdown item" id="item1">
+                            <b>Location</b><i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a href="#" class="item">Medan</a>
+                                <a href="#" class="item">Jakarta Selatan</a>
+                            </div>
+                        </div>
+                        <div class="ui dropdown item" id="item1">
+                            <b>Use Case</b><i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a href="#" class="item">Event</a>
+                                <a href="#" class="item">Meeting</a>
+                                <a href="#" class="item">Photoshoot</a>
+                                <a href="#" class="item">Videoshoot</a>
+                            </div>
+                        </div>
+                        <a href="#" class="item" id="item1"><b>Help</b></a>
+                        <a href="#" class="item" id="item1"><b>Blog</b></a>
+                    </div>
+
+                    <div class="right menu">
+                        <a href="https://api.whatsapp.com/send/?phone=6282127832456&text&type=phone_number&app_absent=0"
+                            class="item" id="item1"><b>Contact Us</b></a>
+                        <a href="homepage.html">
+                            <img class="ui right floated image"
+                                src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
+                                style="height: 35px; margin-top: 11px;">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="ui container" style="margin-top: 60px;">
+                <div class="ui one column centered grid">
+                    <div class="ui container">
+                         <div class="container">
+                             <center>
+                                 <div id="map" style="height: 500px; width: 1000px;"></div>
+                             </center>
+                         </div><br>
+
+                         <script>
+                             var map = L.map('map').setView([-6.315705422893728, 106.79345524571937], 18);
+                             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                 maxZoom: 25,
+                                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                             }).addTo(map);
+                         </script>
+                        <hr>
+                        <div class="ui container" style="text-align: left; margin-top: 20px; margin-bottom: 60px;">
+                            <h1 style="font-size: 40px;">Locations</h1>
+                            <div class="ui  large breadcrumb">
+                                <a href="homepage.html" class="section">Home</a>
+                                <i class="right angle icon divider"></i>
+                                <div class="active section">Location</div>
+                            </div><br><br><br>
+
+                            <div class="ui stackable two column grid">
+                                <div class="column">
+                                    <div class="ui stackable large search" style="border-radius: 0px;">
+                                        <div class="ui icon input">
+                                            <input class="prompt" type="text" placeholder="Masukkan gedung yang dicari">
+                                            <i class="search icon"></i>
+                                        </div>
+                                        <div class="results"></div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="ui stackable large form">
+                                        <div class="field">
+                                            <select class="ui fluid dropdown">
+                                                <option value="">Pilih Lokasi</option>
+                                                <option value="medan">Medan</option>
+                                                <option value="jaksel">Jakarta Selatan</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui equal width stackable grid">
+                                <div class="column" id="box3">
+                                    <img class="ui centered image" src="../img/the101.png" alt="">
+                                    <div class="ui one column grid">
+                                        <h1 id="headmenu"><i class="building icon"></i>The 101</h1>
+                                        <p style="text-align: left;">Kawasan, Jl. DR. Ide Anak Agung Gde Agung No.1,
+                                            RT.5/RW.2,
+                                            Kuningan, Kecamatan Setiabudi, 12950</p>
+                                    </div>
+                                    <div class="ui one column centered grid">
+                                        <a href="#">
+                                            <button class="ui centered button" id="custbutton5"
+                                               ><b>Pelajari Lebih Lanjut</b></button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="column" id="box3">
+                                    <img class="ui centered image" src="../img/clapham.png" alt="">
+                                    <div class="ui  one column grid"></div>
+                                    <div class="ui one column grid">
+                                        <h1 id="headmenu"> <i class="building icon"></i>Clapham</h1>
+                                        <p style="text-align: left;">Komp. Ruko Centre Point Medan Jl. Timor Blok G No.
+                                            III/IV 2nd
+                                            Floor, Gang Buntu, Medan Timur, 20231</p>
+                                    </div>
+                                    <div class="ui one column centered grid">
+                                        <a href="clapham.html">
+                                            <button class="ui centered button" id="custbutton5"
+                                              ><b>Pelajari Lebih Lanjut</b></button>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="column" id="box3">
+                                    <img class="ui centered image" src="../img/spasi.png" alt="">
+                                    <div class="ui one column grid">
+                                        <h1 id="headmenu"><i class="building icon"></i>Spasi</h1>
+                                        <p style="text-align: left;">Komp. Ruko Centre Point Medan Jl. Timor Blok G No.
+                                            III/IV 2nd
+                                            Floor, Gang Buntu, Medan Timur, 20231</p>
+                                    </div>
+                                    <div class="ui one column centered grid">
+                                        <a href="#">
+                                            <button class="ui centered button" id="custbutton5"
+                                               ><b>Pelajari Lebih Lanjut</b></button>
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                                <div class="column" id="box3">
+                                    <img class="ui centered image" src="../img/yafurni.png" alt="">
+                                    <div class="ui one column grid">
+                                        <h1 id="headmenu"><i class="building icon"></i>Yafurni</h1>
+                                        <p style="text-align: left;">Jl. Iskandar Muda No.7, Petisah Hulu, Kec. Medan
+                                            Baru, Kota
+                                            Medan, Sumatera Utara 20153</p>
+                                    </div>
+                                    <div class="ui one column centered grid" style="margin-top: 30px;">
+                                        <a href="#">
+                                            <button class="ui centered button" id="custbutton5"
+                                               ><b>Pelajari Lebih Lanjut</b></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ui vertical footer segment" style="padding-top: 20px;">
+            <div class="ui container">
+                <div class="ui stackable equal height grid">
+                    <div class="four wide column" style="margin-right: 50px;">
+                        <img class="ui image" src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
+                            style="height: 35px; margin-top: 0px;">
+                        <div style="margin-top: 10px;">Komp. Ruko Centre Point Medan Jalan Timor Blok G No. III/IV 2nd
+                            Floor, Gang Buntu, Medan
+                            Timur, Medan City, North Sumatra 20231</div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui header" style="margin-top: 10px;">Location</h4>
+                        <div class="ui  link list">
+                            <a href="clapham.html" class="item">Clapham</a>
+                            <a href="#" class="item">The 101</a>
+                            <a href="#" class="item">Yafurni</a>
+                            <a href="#" class="item">Kalingga</a>
+                            <a href="#" class="item">Spasi</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui header" style="margin-top: 10px;">Use Case</h4>
+                        <div class="ui  link list">
+                            <a href="#" class="item">Event</a>
+                            <a href="#" class="item">Meeting</a>
+                            <a href="#" class="item">Photoshoot</a>
+                            <a href="#" class="item">Office</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui header" style="margin-top: 10px;">Company</h4>
+                        <div class="ui  link list">
+                            <a href="https://api.whatsapp.com/send/?phone=6282127832456&text&type=phone_number&app_absent=0"
+                                class="item">Contact Us</a>
+                            <a href="#" class="item">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="visibility.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="transition.js"></script>
+    <script>
+        $(document)
+            .ready(function () {
+
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item');
+
+            });
+    </script>
+    <script>
+        $('.ui.dropdown')
+            .dropdown();
+
+        $('.menu .item').tab();
+    </script>
+</body>
+
+</html>
