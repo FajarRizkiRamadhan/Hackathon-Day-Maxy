@@ -109,9 +109,17 @@
                     .then(data => {
                         console.log(data); // Handle respons dari server, seperti mengarahkan ke halaman beranda jika login berhasil
                         if (data.success) {
-                            window.location.href = "homepage.html"; // Redirect ke halaman login
-                            // Registrasi berhasil, tampilkan pesan sukses
-                            messageContainer.innerHTML = '<div class="success-message">Registrasi berhasil! Anda dapat login sekarang.</div>';
+                            const apiToken = data.data.api_token;
+                            localStorage.setItem('api_token', apiToken);
+                            console.log(apiToken);
+                        // Redirect pengguna ke halaman yang sesuai berdasarkan peran
+                            if (data.data.user.roles === 'customer') {
+                                window.location.href = 'homepahe.html'; // Halaman pelanggan
+                                messageContainer.innerHTML = '<div class="success-message">Registrasi berhasil! Anda dapat login sekarang.</div>';
+                            } else if (data.data.user.roles === 'owner') {
+                                window.location.href = 'admin.html'; // Halaman pemilik
+                            }
+                            
                         } else {
                             // Registrasi gagal, tampilkan pesan kesalahan
                             messageContainer.innerHTML = '<div class="error-message">Registrasi gagal: ' + data.message + '</div>';

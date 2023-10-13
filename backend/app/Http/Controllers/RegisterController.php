@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Customer;
 
 
 class RegisterController extends Controller
@@ -20,7 +21,7 @@ class RegisterController extends Controller
     {
         //
     }
-
+    
     public function register(Request $request)
     {
         $this->validate($request, User::rules());

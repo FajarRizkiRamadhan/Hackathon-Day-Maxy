@@ -15,54 +15,9 @@ class UserController extends Controller
      *
      * @return void
      */
-    public function register(Request $request)
-    {
-        // Validasi data dari request
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'phone_number' => 'required',
-            'roles' => 'required',
-            'password' => 'required',
-        ]);
 
-        // Cek apakah validasi gagal
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Validasi gagal',
-                'errors' => $validator->errors(),
-            ], 400);
-        }
-        $register = new User();
-        $register->name = $request->name;
-        $register->email = $request->email;
-        $register->phone_number = $request->phone_number;
-        $register->roles = $request->roles;
-        $register->password = Hash::make($request->password);
-        $result = $register->save();
-        if($result)
-        {
-            return response()->json(
-                            [
-                                'success' => true,
-                                'message' => 'Register Berhasil',
-                                'data' => $register
-                            ],201
-                        );
-
-        }
-        else{
-            $data = 'Please try again';
-            return response()->json(
-                [
-                    'success' => false,
-                    'message' => 'Registrasi Gagal',
-                    'data' => $data
-                ],400
-            );
-        }
-        
+    public function __construct(){
+        $this->middleware('authapi');
     }
 
     public function getDataUser()

@@ -15,36 +15,56 @@ class AuthController extends Controller
      * @return void
      */
     
-    public function login(Request $request){
+     public function login(Request $request) {
         $email = $request->input('email');
         $password = $request->input('password');
-        $user = User::where('email',$email)->first();
+        $user = User::where('email', $email)->first();
+        
+        if (!$user) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Login Failed',
+                'data' => ''
+            ], 400);
+        }
     
-        if(Hash::check($password, $user->password)){
+        if (Hash::check($password, $user->password)) {
             $apiToken = base64_encode(Str::random(40));
             $user->api_token = $apiToken;
             $user->save();
-            return response()->json(
-                [
+            // Pemeriksaan peran pengguna
+            if ($user->hasRole('customer')) {
+                // Pengguna adalah pelanggan, arahkan ke halaman pelanggan
+                return response()->json([
                     'success' => true,
                     'message' => 'Login Success',
                     'data' => [
                         'user' => $user,
                         'api_token' => $apiToken
-                    ]
-                ],201
-            );
-        }
-        else{
-            return response()->json(
-                [
-                    'success' => false,
-                    'message' => 'Login Failed',
-                    'data' => ''
-                ],400
-            );
+                    ],
+                    'redirect' => 'customer-login.html' // Atur rute untuk pelanggan
+                ], 201);
+            } elseif ($user->hasRole('owner')) {
+                // Pengguna adalah pemilik, arahkan ke halaman dashboard admin
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Login Success',
+                    'data' => [
+                        'user' => $user,
+                        'api_token' => $apiToken
+                    ],
+                    'redirect' => 'dashboard-admin.html' // Atur rute untuk pemilik
+                ], 201);
+            }
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Login Failed',
+                'data' => ''
+            ], 400);
         }
     }
+    
     public function logout(Request $request){
         $apiToken = $request->input('api_token');
         $user = User::where('api_token',$apiToken)->first();

@@ -18,11 +18,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-//route untuk menampilkan view home
-$router->get('/', function()
-{
-    return View::make('home');
-});
+
 $router->group(['prefix' => 'auth'], function () use ($router) {
     //rute untuk login
     $router->post('/login', 'AuthController@login');
@@ -34,10 +30,25 @@ $router->group(['prefix' => 'auth'], function () use ($router) {
 $router->post('/register', 'RegisterController@register');
 
 //rute middleware untuk memastikan user yang mengakses sudah login
-$router->group(['middleware' => 'auth.api'], function () use ($router) {
+$router->group(['prefix' => 'authapi'], function () use ($router) {
     $router->get('/users', 'UserController@getDataUser');
     $router->get('/users/{id}', 'UserController@getDataUserById');
-    $router->patch('/users/{id}', 'UserController@updateDatUser');
-    $router->delete('/users/{id}', 'UserController@deleteDataUser');
+    $router->put('/update/{id}', 'UserController@updateDataUser');
+    $router->delete('/delete/{id}', 'UserController@deleteDataUser');
 });
-$router->post('/uploadfoto', 'BuildingController@uploadfoto');
+$router->post('/uploadfoto', 'RoomsController@uploadFoto');
+
+
+$router->group(['middleware' => 'authapi'], function () use ($router) {
+    $router->get('/customers', 'CustomerController@allData');
+    $router->get('/rooms', 'RoomsController@allData');
+    $router->get('/rooms/{id}', 'RoomsController@detailData');
+    $router->post('/rooms', 'RoomsController@addData');
+    $router->put('/rooms/{id}', 'RoomsController@editData');
+    $router->delete('/rooms/{id}', 'RoomsController@deleteData');
+});
+
+
+// $router->group(['prefix' =>'Customer'], function() use($router){
+//     $router->get('/', 'RegisterController@allData');
+// });

@@ -19,6 +19,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      *
      * @var string[]
      */
+    public function hasRole($role)
+    {
+        return $this->roles === $role;
+    }
     protected $table = 'users';
     protected $fillable = [
         'name', 
@@ -41,4 +45,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password','api_token'
     ];
+    public function customer(){
+        return $this->hasMany(Customer::class);
+    }
 }

@@ -122,7 +122,44 @@
 
 
     </div>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('http://localhost:8000/customers')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (Array.isArray(data.data)) {
+                        const tableBody = document.querySelector("table tbody");
 
+                        data.data.forEach(customer => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${customer.order_date}</td>
+                                <td>${customer.name}</td>
+                                <td>${customer.email}</td>
+                                <td>${customer.phone_number}</td>
+                                <td>
+                                    <center>
+                                        <button class="ui primary button">Edit</button>
+                                        <button class="ui secondary button">Hapus</button>
+                                    </center>
+                                </td>
+                            `;
+                            tableBody.appendChild(row);
+                        });
+                    } else {
+                        console.error('Data dari API bukan array.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        </script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="visibility.js"></script>

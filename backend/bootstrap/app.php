@@ -25,7 +25,12 @@ $app = new Laravel\Lumen\Application(
 
 $app->withFacades();
 
+
 $app->withEloquent();
+
+$app->configure('filesystems');
+$app->register(Illuminate\Filesystem\FilesystemServiceProvider::class);
+$app->alias('filesystem', Illuminate\Filesystem\Filesystem::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +80,7 @@ $app->configure('app');
 $app->middleware([
     App\Http\Middleware\CorsMiddleware::class
 ]);
+
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
