@@ -8,6 +8,10 @@
     <title>Workfrom</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="web.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 
 <body>
@@ -67,7 +71,7 @@
     <!-- Page Contents -->
     <div class="pusher" id="bgfade">
 
-        <div class="ui vertical masthead center aligned segment">
+        <div class="ui vertical masthead center aligned segment" style="min-height: 700px;">
             <div class="ui container" id="custom2">
                 <div class="ui massive secondary menu">
                     <a href="#" class="toc item" style="margin-right: 0px;">
@@ -111,11 +115,458 @@
                 </div>
             </div>
 
-            <div class="ui container" id="custom2" style="margin-top: 50px; text-align: left;">
+            <div class="ui container" style="margin-top: 2%; text-align: left; width: 1400px;">
                 <div class="ui  large breadcrumb">
                     <a href="homepage.html" class="section">Home</a>
                     <i class="right angle icon divider"></i>
-                    <div class="active section">Location</div>
+                    <a href="location.html" class=" section">Location</a>
+                    <i class="right angle icon divider"></i>
+                    <div class="active section">Clapham</div>
+                </div><br><br>
+
+                <div class="ui equal width stackable grid">
+                    <div class="column">
+                        <h1 style="font-size: 50px; color: #1c667f;"><b>Clapham</b></h1>
+                        <p style="font-size: 25px; color: #1c667f;">Co Working & Event Space</p>
+                        <p style="text-align: justify; font-size: 21px;"><b>Didirikan dari minimnya infrastruktur yang
+                                mendukung komunitas wirausaha dan kreatif di
+                                Medan. Didirikan pada tahun 2015, Clapham Coworking & Event Space memberikan
+                                penghormatan
+                                kepada Sekte Clapham yang berperan penting dalam memberantas perbudakan modern di
+                                Inggris.
+                                Clapham Collective bertekad untuk menjadi tempat di mana para pengubah dunia dan sejarah
+                                dapat melepaskan diri dari lingkungan kerja tradisional. Kami berupaya memberdayakan
+                                bisnis
+                                lokal dan komunitas kreatif untuk memenuhi potensi mereka yang sebenarnya.</b></p><br>
+                        <a href="ordernow.html">
+                            <button class="ui fluid button" id="custbutton6"><b>Pesan Sekarang</b></button>
+                        </a>
+
+                    </div>
+                    <div class="column">
+                        <img class="ui fluid image" src="../img/bigclapham.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui vertical masthead center aligned segment" style="min-height: 700px; padding-bottom: 90px;">
+            <div class="ui container" style="margin-top: 20px; text-align: left; width: 1400px;">
+                <br>
+                <h1 style="font-size: 50px; color: #1c667f;"><b>Plan dan Harga</b></h1><br><br>
+                <div class="ui equal width stackable grid">
+                    <div class="column">
+                        <a href="#" style="color: black;">
+                            <div class="ui container"
+                                style="background-color: white; padding: 20px; border-radius: 10px; border: 1px solid;">
+                                <h2><b>Private Office</b></h2>
+                                <div class="ui equal width stackable grid">
+                                    <div class="column">
+                                        <h3>Kantor pribadi dan aman untuk tim dengan kapasitas berapa pun.</h3>
+                                    </div>
+                                    <div class="column">
+                                        <h3 style="text-align: right;">Harga mulai dari <div style="color: #1c667f;">Rp
+                                                6.000.000/bulan</div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a><br>
+                        <a href="#" style="color: black;">
+                            <div class="ui container"
+                                style="background-color: white; padding: 20px; border-radius: 10px; border: 1px solid;">
+                                <h2><b>Daily Pass</b></h2>
+                                <div class="ui equal width stackable grid">
+                                    <div class="column">
+                                        <h3>Untuk produktivitas sehari penuh di berbagai lokasi.</h3>
+                                    </div>
+                                    <div class="column">
+                                        <h3 style="text-align: right;">Harga mulai dari <div style="color: #1c667f;">Rp
+                                                100.000/bulan</div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a><br>
+                        <a href="#" style="color: black;">
+                            <div class="ui container"
+                                style="background-color: white; padding: 20px; border-radius: 10px; border: 1px solid;">
+                                <h2><b>Flexible Desk</b></h2>
+                                <div class="ui equal width stackable grid">
+                                    <div class="column">
+                                        <h3>Cukup bawa laptop Anda, pilih tempat duduk yang terbuka, dan mulai bekerja.
+                                        </h3>
+                                    </div>
+                                    <div class="column">
+                                        <h3 style="text-align: right;">Harga mulai dari <div style="color: #1c667f;">Rp
+                                                900.000/bulan</div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a><br>
+                        <a href="#" style="color: black;">
+                            <div class="ui container"
+                                style="background-color: white; padding: 20px; border-radius: 10px; border: 1px solid;">
+                                <h2><b>Dedicated Desk</b></h2>
+                                <div class="ui equal width stackable grid">
+                                    <div class="column">
+                                        <h3>Ruang kantor yang sempurna untuk setiap kebutuhan. Kami menyediakan meja dan
+                                            kursi yang sempurna untuk Anda.</h3>
+                                    </div>
+                                    <div class="column">
+                                        <h3 style="text-align: right;">Harga mulai dari <div style="color: #1c667f;">Rp
+                                                1.200.000/bulan</div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a><br>
+                        <a href="#" style="color: black;">
+                            <div class="ui container"
+                                style="background-color: white; padding: 20px; border-radius: 10px; border: 1px solid;">
+                                <h2><b>Event Space</b></h2>
+                                <div class="ui equal width stackable grid">
+                                    <div class="column">
+                                        <h3>Cocok untuk seminar, konferensi pers, dan pertemuan perusahaan besar.
+                                            Tersedia hingga 500 orang.</h3>
+                                    </div>
+                                    <div class="column">
+                                        <h3 style="text-align: right;">Harga mulai dari <div style="color: #1c667f;">Rp
+                                                1.400.000/bulan</div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a><br>
+                        <a href="#" style="color: black;">
+                            <div class="ui container"
+                                style="background-color: white; padding: 20px; border-radius: 10px; border: 1px solid;">
+                                <h2><b>Meeting Room</b></h2>
+                                <div class="ui equal width stackable grid">
+                                    <div class="column">
+                                        <h3>Kantor pribadi dan aman untuk tim dengan kapasitas berapa pun.</h3>
+                                    </div>
+                                    <div class="column">
+                                        <h3 style="text-align: right;">Harga mulai dari <div style="color: #1c667f;">Rp
+                                                650.000/bulan</div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a><br>
+                        <a href="">
+                            <button class="ui fluid button" id="custbutton6"><b>Hubungi Kami</b></button>
+                        </a>
+
+                    </div>
+                    <div class="column" style="padding-left: 100px;">
+                        <div class="ui grid">
+                            <div class="ten wide column">
+                                <img class="ui image" src="../img/clapham1.png" alt="">
+                            </div>
+                            <div class="six wide column">
+                                <img class="ui image" src="../img/clapham2.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="ui grid">
+                            <div class="eight wide column">
+                                <img class="ui  image" src="../img/clapham3.png" alt="">
+                            </div>
+                            <div class="eight wide column">
+                                <img class="ui  image" src="../img/clapham4.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="ui grid">
+                            <div class="ten wide column">
+                                <img class="ui  image" src="../img/clapham5.png" alt="">
+                            </div>
+                            <div class="six wide column">
+                                <img class="ui  image" src="../img/clapham6.png" alt=""><br>
+                                <img class="ui  image" src="../img/clapham7.png" alt="">
+                            </div>
+                        </div><br>
+                        <button class="ui fluid button" id="custbutton6"><b>Pesan Sekarang</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui vertical masthead center aligned segment" style="min-height: 650px; padding-bottom: 90px;">
+            <div class="ui container" style="margin-top: 80px; text-align: left; width: 1400px;">
+                <div class="ui one column centered grid">
+                    <h1 style="font-size: 50px; color: #1c667f;"><b>Fasilitas</b></h1>
+                </div><br><br><br>
+                <div class="ui equal width stackable centered grid"
+                    style="background-color: white; border: 1px solid; padding: 50px;">
+
+                    <div class="column" style="text-align: left;">
+                        <h2><b><i class="wifi icon" style="margin-right: 20px;"></i>Kecepatan Internet yang Tinggi</b>
+                        </h2>
+                        <h2><b><i class="comments icon" style="margin-right: 20px;"></i>Event dan Ruang Meeting</b></h2>
+                        <h2><b><i class="envelope open icon" style="margin-right: 20px;"></i>Penanganan Surat dan
+                                Pengemasan</b></h2>
+                        <h2><b><i class="user plus icon" style="margin-right: 20px;"></i>Pelayanan Meja Depan</b>
+                        </h2>
+                    </div>
+                    <div class="column" style="text-align: left; padding-left: 300px;">
+                        <h2><b><i class="print plus icon" style="margin-right: 20px;"></i>Pelayanan Cetak</b></h2>
+                        <h2><b><i class="map marker alternate plus icon" style="margin-right: 20px;"></i>Akses Mudah</b>
+                        </h2>
+                        <h2><b><i class="fa-solid fa-kitchen-set" style="margin-right: 20px;"></i>Ruang Dapur</b></h2>
+                        <h2><b><i class="coffee icon" style="margin-right: 20px;"></i>Air Mineral, Kopi dan Teh</b></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui vertical masthead center aligned segment" style="min-height: 650px; padding-bottom: 90px;">
+            <div class="ui container" style="margin-top: 80px; text-align: left; width: 1400px;">
+                <div class="ui one column centered grid">
+                    <h1 style="font-size: 50px; color: #1c667f;"><b>Fasilitas Terdekat</b></h1>
+                </div><br><br><br>
+                <div class="ui equal width stackable centered grid"
+                    style="background-color: white; border: 1px solid; padding: 50px;">
+
+                    <div class="column" style="text-align: left; padding-left: 70px;">
+                        <h2 style="color: #1c667f;"><b>Kereta</b></h2>
+                        <div>
+                            <h2><b><i class="train icon" style="margin-right: 20px;"></i>Stasiun Kereta Bandara </b>
+                                <div style="margin-left: 50px; font-size: 20px;">400m</div>
+                            </h2>
+                        </div>
+                        <h2 style="color: #1c667f;"><b>Taksi</b></h2>
+                        <div>
+                            <h2><b><i class="train icon" style="margin-right: 20px;"></i>Base Camp Bluebird</b>
+                                <div style="margin-left: 50px; font-size: 20px;">210m</div>
+                            </h2>
+                        </div>
+                        <div>
+                            <h2 style="margin-left: 50px;"><b>Base Camp Grab</b>
+                                <div style="font-size: 20px;">210m</div>
+                            </h2>
+                        </div>
+                        <h2 style="color: #1c667f;"><b>Hotel</b></h2>
+                        <div>
+                            <h2><b><i class="fa-solid fa-hotel" style="margin-right: 20px;"></i>Karibia Boutique
+                                    Hotel</b>
+                                <div style="margin-left: 50px; font-size: 20px;">250m</div>
+                            </h2>
+                        </div>
+                        <div>
+                            <h2 style="margin-left: 50px;"><b>Desatu Hotel</b>
+                                <div style="font-size: 20px;">210m</div>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="column" style="text-align: left; padding-left: 70px;">
+                        <h2 style="color: #1c667f;"><b>Rumah Sakit</b></h2>
+                        <div>
+                            <h2><b><i class="hospital icon" style="margin-right: 20px;"></i>RS Murni Teguh Memoria </b>
+                                <div style="margin-left: 50px; font-size: 20px;">400m</div>
+                            </h2>
+                        </div>
+                        <h2 style="color: #1c667f;"><b>Bar</b></h2>
+                        <div>
+                            <h2><b><i class="fa-solid fa-martini-glass-citrus" style="margin-right: 20px;"></i>Healymacs
+                                    Irish Bar & <div style="margin-left: 50px;">Restaurant</div></b>
+                                <div style="margin-left: 50px; font-size: 20px;">50m</div>
+                            </h2>
+                        </div>
+                        <div>
+                            <h2 style="margin-left: 50px;"><b>Merdeka Walk</b>
+                                <div style="font-size: 20px;">210m</div>
+                            </h2>
+                        </div>
+                        <h2 style="color: #1c667f;"><b>Mall</b></h2>
+                        <div>
+                            <h2><b><i class="shopping bag icon" style="margin-right: 20px;"></i>Center Point</b>
+                                <div style="margin-left: 50px; font-size: 20px;">230m</div>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="column" style="text-align: left; padding-left: 70px;">
+                        <h2 style="color: #1c667f;"><b>Gym</b></h2>
+                        <div>
+                            <h2><b><i class="fa-solid fa-dumbbell" style="margin-right: 20px;"></i>Vista Gym</b>
+                                <div style="margin-left: 50px; font-size: 20px;">76m</div>
+                            </h2>
+                        </div>
+                        <h2 style="color: #1c667f;"><b>Resto</b></h2>
+                        <div>
+                            <h2><b><i class="fa-solid fa-utensils" style="margin-right: 20px;"></i>Nasi Padang Istana
+                                    Krakatau</b>
+                                <div style="margin-left: 50px; font-size: 20px;">210m</div>
+                            </h2>
+                        </div>
+                        <h2 style="color: #1c667f;"><b>Caffe</b></h2>
+                        <div>
+                            <h2><b><i class="coffee icon" style="margin-right: 20px;"></i>Starbucks</b>
+                                <div style="margin-left: 50px; font-size: 20px;">80m</div>
+                            </h2>
+                        </div>
+                        <div>
+                            <h2 style="margin-left: 50px;"><b>J.Co Donuts</b>
+                                <div style="font-size: 20px;">80m</div>
+                            </h2>
+                        </div>
+                        <div>
+                            <h2 style="margin-left: 50px;"><b>Coffeenatics</b>
+                                <div style="font-size: 20px;">80m</div>
+                            </h2>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="ui vertical masthead center aligned segment" style="min-height: 650px; padding-bottom: 90px;">
+            <div class="ui container" style="margin-top: 80px; text-align: left; width: 1400px;">
+                <div class="ui one column centered grid">
+                    <h1 style="font-size: 50px; color: #1c667f;"><b>Client Kami</b></h1>
+                </div><br><br>
+                <div class="ui one column centered grid">
+                    <div>
+                        <p style="font-size: 25px; color: #1c667f;">Saat ini kami melayani lebih dari 200+ perusahaan
+                            yang luar biasa</p>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="ui equal width stackable centered grid">
+                    <img class="ui fluid image" src="../img/sponsor.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="ui vertical masthead center aligned segment" style="min-height: 650px; padding-bottom: 90px;">
+            <div class="ui container" style="margin-top: 80px; text-align: left; width: 1400px;">
+                <div class="ui one column centered grid">
+                    <h1 style="font-size: 50px; color: #1c667f;"><b>Apa Kata Anggota Kami?</b></h1>
+                </div><br><br>
+                <div class="ui one column centered grid">
+                    <div>
+                        <p style="font-size: 25px; color: #1c667f;">Hear it first from our members who have experienced
+                            our space</p>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="ui equal width stackable grid">
+                    <div class="column" id="box5">
+                        <img class="ui left floated image" src="../img/review1.png">
+                        <p style="font-size: 20px; margin-bottom: 0px;">Sondang Marisa P</p>
+                        <div>Project Operations Specialist</div>
+                        <div class="ui large star rating" style="margin-top: 5px;">
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                        </div><br><br>
+                        <p style="font-size: 20px;">
+                            <b>
+                                Ruang kerja bersama yang Nyaman, Nyaman, dan Bersih, Dengan staf yang membantu dan
+                                ramah. Dikelilingi oleh restoran-restoran bagus, dan Kopi Enak Gratis untuk memulai hari
+                                saya. PARFAIT!!!
+                            </b>
+                        </p>
+                    </div>
+                    <div class="column" id="box5">
+                        <img class="ui left floated image" src="../img/review2.png">
+                        <p style="font-size: 20px; margin-bottom: 0px;">Joni Ceroz</p>
+                        <div>Brand & Design Consultant</div>
+                        <div class="ui large star rating" style="margin-top: 5px;">
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                        </div><br><br>
+                        <p style="font-size: 20px;">
+                            <b>
+                                Menurut saya ini adalah Coworking Space terbaik di kota khususnya di Medan-Indonesia, di
+                                mana Anda dapat menemukan banyak teman kreatif di sini untuk bekerja sama dengan proyek
+                                Anda. sangat direkomendasikan!!!
+                            </b>
+                        </p>
+                    </div>
+                </div>
+                <div class="ui equal width stackable grid">
+                    <div class="column" id="box5">
+                        <img class="ui left floated image" src="../img/review3.png">
+                        <p style="font-size: 20px; margin-bottom: 0px;">Hendra Soewarno</p>
+                        <div>Dosen IT di STMIK IBBI</div>
+                        <div class="ui large star rating" style="margin-top: 5px;">
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                        </div><br><br>
+                        <p style="font-size: 20px;">
+                            <b>
+                               Tempat yang bagus untuk coworking space rental dan seminar.
+                            </b>
+                        </p>
+                    </div>
+                    <div class="column" id="box5">
+                        <img class="ui left floated image" src="../img/review4.png">
+                        <p style="font-size: 20px; margin-bottom: 0px;">Steven Guntur</p>
+                        <div>Dokter Anak</div>
+                        <div class="ui large star rating" style="margin-top: 5px;">
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                            <i class="active icon"></i>
+                        </div><br><br>
+                        <p style="font-size: 20px;">
+                            <b>
+                                Salah satu tempat paling inspiratif di kota. Saya tumbuh satu langkah lebih tinggi dan
+                                lebih baik setiap kali saya meninggalkan gedung ini. Kudos untuk tim!!!
+                            </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui vertical masthead center aligned segment" style="min-height: 650px; padding-bottom: 90px;">
+            <div class="ui container" style="margin-top: 80px; text-align: left; width: 1400px;">
+                <div class="ui equal width grid">
+                    <div class="column">
+                         <h1 style="font-size: 50px; color: #1c667f;"><b>Lokasi Kami</b></h1>
+                         <p style="font-size: 25px; color: #1c667f;">dan Jam Operasional</p>
+                         <h3>
+                            <div>Clapham Co-working & Event Space.</div>
+                            <div>Ruko Centre Point Medan.</div>
+                            <div>Jalan Timor Blok G No. III/IV 2nd Floor,</div>
+                            <div>Gang Buntu, Medan Timur, Medan City,</div>
+                            <div>North Sumatra 20231</div>
+                         </h3>
+                         <div style="font-size: 20px;">
+                            <p style="margin-bottom: 0px;">09:00 AM - 17:00 PM | Senin - Jumat</p>
+                            <p>09:00 AM - 14:00 PM | Sabtu</p>
+                         </div><br>
+                         <button class="ui fluid button" id="custbutton6"><b>Lihat Arah</b></button>
+                    </div>
+                    <div class="column">
+                        <div class="container">
+                                <div id="map" style="height: 400px; width: 700px;"></div>
+                        </div><br>
+
+                        <script>
+                            var map = L.map('map').setView([-6.315705422893728, 106.79345524571937], 18);
+                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                maxZoom: 25,
+                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                            }).addTo(map);
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>
@@ -195,6 +646,7 @@
 
         $('.menu .item').tab();
     </script>
+    <script src="https://kit.fontawesome.com/200bdb8a49.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
