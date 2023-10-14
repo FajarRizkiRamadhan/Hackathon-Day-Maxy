@@ -114,7 +114,7 @@
                             console.log(apiToken);
                         // Redirect pengguna ke halaman yang sesuai berdasarkan peran
                             if (data.data.user.roles === 'customer') {
-                                window.location.href = 'homepahe.html'; // Halaman pelanggan
+                                window.location.href = 'homepage.html'; // Halaman pelanggan
                                 messageContainer.innerHTML = '<div class="success-message">Registrasi berhasil! Anda dapat login sekarang.</div>';
                             } else if (data.data.user.roles === 'owner') {
                                 window.location.href = 'admin.html'; // Halaman pemilik

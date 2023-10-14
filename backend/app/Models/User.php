@@ -8,7 +8,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
-use iluminate\Support\Facades\Hash;
+use Iluminate\Support\Facades\Hash;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
@@ -19,23 +19,18 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      *
      * @var string[]
      */
-    public function hasRole($role)
-    {
-        return $this->roles === $role;
-    }
-    protected $table = 'users';
     protected $fillable = [
         'name', 
         'email',
         'phone_number',
         'roles',
+        'api_token',
        ];
-       public static function rules($id = null)
-       {
-           return [
-               'email' => 'required|email|unique:users,email,' . $id,
-           ];
-       }
+    public function hasRole($role)
+    {
+        return $this->roles === $role;
+    }
+
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -45,7 +40,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password','api_token'
     ];
-    public function customer(){
+    public function buldings(){
+        return $this->hasMany(Building::class);
+    }
+    public function customers(){
         return $this->hasMany(Customer::class);
     }
 }

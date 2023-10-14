@@ -24,7 +24,7 @@ class RegisterController extends Controller
     
     public function register(Request $request)
     {
-        $this->validate($request, User::rules());
+        // $this->validate($request, User::rules());
         if (User::where('email', $request->input('email'))->exists()) {
             return response()->json(
                 [
