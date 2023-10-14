@@ -70,12 +70,12 @@
     <div class="pusher" id="bgfade">
 
         <div class="ui vertical masthead center aligned segment">
-            <div class="ui container" style="width: 1650px;">
+            <div class="ui container">
                 <div class="ui massive secondary menu">
                     <a href="#" class="toc item" style="margin-right: 0px;">
                         <i class="sidebar icon"></i>
                     </a>
-                    <a href="login.html" class="item" style="margin-left: 0px; font-size: 25px;">
+                    <a href="login.html" class="item" style="margin-left: 0px; font-size: 20px;">
                         <i class="user circle icon"></i>
                     </a>
                     <div class="left menu">
@@ -117,81 +117,42 @@
 
 
 
-            <div class="ui fluid container" id="box4">
-                <div class="ui one column centered grid">
-                    <h1 style="font-size: 45px;">Pesan Ruangan Sekarang</h1>
-                </div><br><br>
-                <p style="font-size: 17px;">Isi Detail Kontak Kamu dan Perwakilan Kami Akan Menghubungi Anda Kembali</p>
-                <hr style="width: 1600px;">
-                <form class="ui huge form" style="text-align: left; margin: 50px; margin-bottom: 20px;">
-                    <div class="field">
-                        <div class="two fields">
-                            <div class="field">
-                                <label>Nama Lengkap</label>
-                                <input type="text" name="namaorder">
-                            </div>
-                            <div class="required field">
-                                <label>Nomor Whatsapp</label>
-                                <input type="text" name="waorder">
-                            </div>
-                        </div>
-                    </div><br><br>
-                    <div class="field">
-                        <div class="two fields">
-                            <div class="required field">
-                                <label>Email</label>
-                                <input type="text" name="emailorder">
-                            </div>
-                            <div class="field">
-                                <label>Nama Perusahaan</label>
-                                <input type="text" name="perusahaanorder">
-                            </div>
-                        </div>
-                    </div><br><br>
-                    <div class="two fields">
-                        <div class="field">
-                            <label>Rencana Pesan</label>
-                            <select class="ui fluid dropdown">
-                                <option value="">Silahkan Pilih</option>
-                                <option value="po">Private Office</option>
-                                <option value="dp">Daily Pass</option>
-                                <option value="fd">Flexible Desk</option>
-                                <option value="dd">Dedicated Desk</option>
-                                <option value="es">Event Space</option>
-                                <option value="mr">Meeting Room</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <label>Jenis Gedung</label>
-                            <select class="ui fluid dropdown">
-                                <option value="">Siahkan Pilih</option>
-                                <option value="101">The 101</option>
-                                <option value="clapham">Clapham</option>
-                                <option value="kalingga">Kalingga</option>
-                                <option value="spasi">Spasi</option>
-                                <option value="yafurni">Yafurni</option>
-                            </select>
-                        </div>
-                    </div><br><br>
-                    <div class="two fields">
-                        <div class="field">
-                            <div class="field">
-                                <label>Pax (Kapasitas)</label>
-                                <input type="text" name="perusahaanorder">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>Kontak Penghubung</label>
-                            <select class="ui fluid dropdown">
-                                <option value="">Siahkan Pilih</option>
-                                <option value="wa">Whatsapp</option>
-                                <option value="email">Email</option>
-                            </select>
-                        </div>
-                    </div><br>
-                    <div class="ui button"
-                        style="background-color: #cee0e6; color: #17667f; width: 200px; font-size: 17px;">Submit</div>
-                </form>
+            <div class="ui container">
+                <br><br>
+                <h1 style="font-size: 50px; text-align: right;"><b><span style="color: #17667f;">Help</span> Desk</b></h1>
+                <hr><br>
+                <h1 style="font-size: 50px; text-align: left;"><b>Frequently Asked Questions</b></h1>
+                <div class="ui massive styled fluid accordion" style="text-align: left; font-size: 35px;">
+                    <div class="title active">
+                        <i class="dropdown icon"></i>
+                        Apa itu Workfrom?
+                    </div>
+                    <div class="content active">
+                        <p class="transition visible" style="display: block !important;">
+                            Workfrom merupakan sebuah platform yang menghubungkan penyewa dengan ruang kantor yang tepat
+                            di mana saja di berbagai lokasi. Kami dapat membantu menemukan kebutuhan penyewa dan pemilik
+                            gedung.
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        Fasilitas apa saja yang ditawarkan?
+                    </div>
+                    <div class="content">
+                        <p class="transition hidden">
+                            Fasilitas mencakup akses internet berkecepatan tinggi, minuman gratis, area hiburan dan area
+                            lounge, serta kesempatan untuk memperluas networking.
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        Apakah buka di akhir pekan atau hari libur?
+                    </div>
+                    <div class="content">
+                        <p class="transition hidden">Private Office tutup selama akhir pekan dan hari libur. Tetapi
+                            kedepannya bisa terdapat perubahan pada jam operasional kami.</p>
+                    </div>
+                </div>
             </div>
 
 
@@ -232,6 +193,10 @@
             .dropdown();
 
         $('.menu .item').tab();
+
+        $('.ui.accordion')
+        .accordion()
+        ;
     </script>
 </body>
 
