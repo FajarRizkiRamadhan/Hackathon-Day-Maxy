@@ -40,7 +40,7 @@
                 <div class="menu">
                     <a href="admin.html" class="item">Dashboard</a>
                     <a href="admin-customer.html" class="item">Customer</a>
-                    <a href="admin-usecase.html" class="item">Use Case Detail</a>
+                    <a href="cobabuilding.html" class="item">Use Case Detail</a>
                     <a href="admin-properti.html" class="item">Properti</a>
                 </div>
             </div>
@@ -118,11 +118,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const logoutButton = document.getElementById('logout-button');
-    
+            const userToken = localStorage.getItem('api_token');
             // Tambahkan event listener untuk tombol logout
             logoutButton.addEventListener('click', function (e) {
                 e.preventDefault();
-                const userToken = localStorage.getItem('api_token');
 
                 // Lakukan permintaan logout ke server
                 fetch('http://localhost:8000/auth/logout', {

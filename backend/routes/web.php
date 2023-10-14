@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Daftar rute yang memerlukan otentikasi di sini
 });
     
-$router->group([ 'prefix' => 'building'], function () use ($router){
+$router->group(['middleware'=>'authapi', 'prefix' => 'building'], function () use ($router){
     $router->get('/showallbuilding', 'BuildingController@showallbuilding');
     $router->get('/showidbuilding', 'BuildingController@showidbuilding');
     $router->post('/addbuilding', 'BuildingController@addbuilding');
@@ -56,3 +56,11 @@ $router->post('/uploadfoto', 'RoomsController@uploadFoto');
 // $router->group(['prefix' =>'Customer'], function() use($router){
 //     $router->get('/', 'RegisterController@allData');
 // });
+$router->post('/addbuilding', 'CobaController@addbuilding');
+
+$router->group(['prefix' => 'aset'], function () use ($router){
+        $router->get('/alldata', 'AsetController@all');
+        $router->post('/add','AsetController@add');
+        $router->put('/update', 'AsetController@update');
+        $router->delete('/delete/{id}','AsetController@delete');
+});

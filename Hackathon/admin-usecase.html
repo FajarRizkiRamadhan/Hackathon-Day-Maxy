@@ -40,7 +40,7 @@
                 <div class="menu">
                     <a href="admin.html" class="item">Dashboard</a>
                     <a href="admin-customer.html" class="item">Customer</a>
-                    <a href="admin-usecase.html" class="item">Use Case Detail</a>
+                    <a href="admin-usecase.html" class="item">Building</a>
                     <a href="admin-properti.html" class="item">Properti</a>
                 </div>
             </div>
@@ -69,17 +69,17 @@
                     <div class="ui huge breadcrumb" style="float: right; margin-right: 50px; margin-top: 35px;">
                         <a href="admin.html" class="section">Admin</a>
                         <i class="right angle icon divider"></i>
-                        <a class="active section" style="color: black;">Use Case detail</a>
+                        <a class="active section" style="color: black;">Building</a>
                     </div>
-                    <h1 style="float: left; margin-left: 50px; font-size: 40px;">Use Case</h1>
+                    <h1 style="float: left; margin-left: 50px; font-size: 40px;">Building</h1>
                     <div class="container" style="margin-left: 50px; margin-right: 50px;">
                         <a href="#">
                             <button class="ui fluid button" id="custbutton4">
-                                <div style="float: left;">Tambah Use Case</div><i class="plus icon divider"
+                                <div style="float: left;">Tambah Building</div><i class="plus icon divider"
                                     style="float: right;"></i>
                             </button>
                         </a><br>
-                        <form class="ui huge form" style="text-align: left; margin: 50px; margin-bottom: 20px;">
+                        <form id="buildingForm" class="ui huge form" style="text-align: left; margin: 50px; margin-bottom: 20px;">
                             <div class="field">
                                 <div class="two fields">
                                     <div class="field">
@@ -191,6 +191,73 @@
 
     </div>
 
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            const messageContainer = document.getElementById('message-container');
+            const buildingForm = document.getElementById('buildingForm');
+            const nameInput = buildingForm.querySelector('input[name="name"]');
+            const facilityInput = buildingForm.querySelector('input[name="facility"]');
+            const locationInput = buildingForm.querySelector('input[name="location"]');
+            const cityInput = buildingForm.querySelector('input[name="city"]');
+            const provinceInput = buildingForm.querySelector('input[name="province"]');
+            const sizeInput = buildingForm.querySelector('input[name="size"]');
+            const capacityInput = buildingForm.querySelector('input[name="capacity"]');
+            const accomodateInput = buildingForm.querySelector('input[name="accomodate"]');
+            const descriptionInput = buildingForm.querySelector('input[name="description"]');
+            const priceInput = buildingForm.querySelector('input[name="prize"]');
+            const categoryInput = buildingForm.querySelector('input[name="category"]');
+            const subCategoryInput = buildingForm.querySelector('input[name="subcategory"]');
+            const nameImageInput = buildingForm.querySelector('input[name="nameimage"]');
+            const urlImageInput = buildingForm.querySelector('input[name="url"]');
+            const fileInput = buildingForm.querySelector('input[type="file"]');
+        
+          
+            // Tambahkan event listener untuk mengirim data formulir
+            buildingForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                
+                // Buat objek FormData untuk mengirim data formulir
+                const formData = new FormData(buildingForm);
+                formData.append('name', nameInput.value);
+                formData.append('facility', facilityInput.value);
+                formData.append('location', locationInput.value);
+                formData.append('city', cityInput.value);
+                formData.append('province', provinceInput.value);
+                formData.append('size', sizeInput.value);
+                formData.append('capacity', capacityInput.value);
+                formData.append('accommodate', accommodateInput.value);
+                formData.append('description', descriptionInput.value);
+                formData.append('price', priceInput.value);
+                formData.append('category', categoryInput.value);
+                formData.append('subcategory', subcategoryInput.value);
+                formData.append('nameimage', nameImageInput.value);
+                formData.append('url', urlImageInput.value);
+                formData.append('image', imageInput.files[0]);
+        
+                fetch('http://localhost:8000/building/addbuilding', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle respons dari server
+                    console.log(data);
+                    if (data.success) {
+                        // Registrasi berhasil, tampilkan pesan sukses
+                        messageContainer.innerHTML = '<div class="success-message">Registrasi berhasil!</div>';
+                    } else {
+                        // Registrasi gagal, tampilkan pesan kesalahan
+                        messageContainer.innerHTML = '<div class="error-message">Registrasi gagal: ' + data.message + '</div>';
+                    }
+                })
+                .catch(error => {
+                    // Tangani kesalahan jika ada
+                    console.error(error);
+                });
+            });
+        });
+        </script>
+        
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="visibility.js"></script>
