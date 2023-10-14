@@ -556,7 +556,10 @@
                             <p style="margin-bottom: 0px;">09:00 AM - 17:00 PM | Senin - Jumat</p>
                             <p>09:00 AM - 14:00 PM | Sabtu</p>
                         </div><br>
-                        <button class="ui fluid button" id="custbutton6"><b>Lihat Arah</b></button>
+                        <a
+                            href="https://www.google.com/maps/place/Clapham+Collective/@3.5926181,98.6788557,17z/data=!4m14!1m7!3m6!1s0x303131c784afcce9:0x1c0f6a9ddeb16361!2sClapham+Collective!8m2!3d3.5926181!4d98.681436!16s%2Fg%2F11bwc10nt0!3m5!1s0x303131c784afcce9:0x1c0f6a9ddeb16361!8m2!3d3.5926181!4d98.681436!16s%2Fg%2F11bwc10nt0?entry=ttu">
+                            <button class="ui fluid button" id="custbutton6"><b>Lihat Arah</b></button>
+                        </a>
                     </div>
                     <div class="column">
                         <div class="container">
@@ -564,11 +567,12 @@
                         </div><br>
 
                         <script>
-                            var map = L.map('map').setView([-6.315705422893728, 106.79345524571937], 18);
+                            var map = L.map('map').setView([3.592950036607221, 98.68139308106794], 13);
                             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                maxZoom: 25,
+                                maxZoom: 19,
                                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             }).addTo(map);
+                            var marker = L.marker([3.592950036607221, 98.68139308106794]).addTo(map);
                         </script>
                     </div>
                 </div>

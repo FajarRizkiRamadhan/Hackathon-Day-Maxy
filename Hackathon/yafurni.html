@@ -133,12 +133,16 @@
                         <h1 style="font-size: 50px; color: #1c667f;"><b>Yafurni</b></h1>
                         <p style="font-size: 25px; color: #1c667f;">Working Space</p>
                         <p style="text-align: justify; font-size: 21px;"><b>
-                            Ruang kerja yang cocok untuk industri kreatif dekat pusat kota Medan. Tempat ini memiliki
-                            banyak koperasi, dunia digital dan desain. Jika Anda seorang arsitek atau desainer dan ingin
-                            bekerja sendiri, ini adalah tempat terbaik untuk Anda.
-                        </b></p>
+                                Ruang kerja yang cocok untuk industri kreatif dekat pusat kota Medan. Tempat ini
+                                memiliki
+                                banyak koperasi, dunia digital dan desain. Jika Anda seorang arsitek atau desainer dan
+                                ingin
+                                bekerja sendiri, ini adalah tempat terbaik untuk Anda.
+                            </b></p>
                         <p style="text-align: justify; font-size: 21px;"><b>
-                                Yafurni Working Space, merupakan Coworking Space yang ada di Medan, Sumatera Utara. Yafurni Working Space memberikan Anda kesempatan untuk bekerja sama dengan desainer lain, arsitek, developer, dan masih banyak lagi.
+                                Yafurni Working Space, merupakan Coworking Space yang ada di Medan, Sumatera Utara.
+                                Yafurni Working Space memberikan Anda kesempatan untuk bekerja sama dengan desainer
+                                lain, arsitek, developer, dan masih banyak lagi.
                             </b></p>
                         <a href="ordernow.html">
                             <button class="ui fluid button" id="custbutton6"><b>Pesan Sekarang</b></button>
@@ -554,7 +558,10 @@
                             <p style="margin-bottom: 0px;">09:00 AM - 17:30 PM | Senin - Jumat</p>
                             <p>09:00 AM - 15:00 PM | Sabtu</p>
                         </div><br>
-                        <button class="ui fluid button" id="custbutton6"><b>Lihat Arah</b></button>
+                        <a
+                            href="https://www.google.com/maps/place/Yafurni+Working+Space/@3.583322,98.6589393,17z/data=!3m1!4b1!4m6!3m5!1s0x30313119284c93e1:0x37957c852bec59d7!8m2!3d3.583322!4d98.6615196!16s%2Fg%2F11tnh_khdk?entry=ttu">
+                            <button class="ui fluid button" id="custbutton6"><b>Lihat Arah</b></button>
+                        </a>
                     </div>
                     <div class="column">
                         <div class="container">
@@ -562,11 +569,12 @@
                         </div><br>
 
                         <script>
-                            var map = L.map('map').setView([-6.315705422893728, 106.79345524571937], 18);
+                            var map = L.map('map').setView([3.5835147378460364, 98.6615088675748], 13);
                             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                maxZoom: 25,
+                                maxZoom: 19,
                                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             }).addTo(map);
+                            var marker = L.marker([3.5835147378460364, 98.6615088675748]).addTo(map);
                         </script>
                     </div>
                 </div>

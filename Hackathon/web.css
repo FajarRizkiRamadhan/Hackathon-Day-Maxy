@@ -263,6 +263,14 @@
      padding-bottom: 25px;
  }
 
+   #box7 {
+     border-radius: 10px;
+     background-color: #F5C0BF;
+     box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     margin: 20px;
+     padding-bottom: 25px;
+ }
+
  #headmenu {
      margin-top: 25px;
  }
