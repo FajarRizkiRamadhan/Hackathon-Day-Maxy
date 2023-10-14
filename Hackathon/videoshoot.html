@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Workfrom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4E6TG4R2SS');
+    </script>
+</head>
+
+<body>
+
+    <!-- Following Menu -->
+    <div class="ui top fixed hidden massive secondary menu" style="padding: 15px; background-color: #cee0e6;">
+        <div class="ui container">
+            <a href="homepage.html">
+                <img src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
+                    style="height: 27px; margin-top: 12px;">
+            </a>
+            <div class="right menu">
+                <a href="ordernow.html" class="item"><b>Order Now</b></a>
+                <div class="ui dropdown item" id="item1">
+                    <b>Location</b><i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="location.html" class="item">Location</a>
+                        <a href="medan.html" class="item">Medan</a>
+                        <a href="jaksel.html" class="item">Jakarta Selatan</a>
+                    </div>
+                </div>
+                <div class="ui dropdown item" id="item2">
+                    <b>Use Case</b><i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="usecase.html" class="item">Use Case</a>
+                        <a href="event.html" class="item">Event</a>
+                        <a href="meeting.html" class="item">Meeting</a>
+                        <a href="photoshoot.html" class="item">Photoshoot</a>
+                        <a href="videoshoot.html" class="item">Videoshoot</a>
+                    </div>
+                </div>
+                <a href="help.html" class="item"><b>Help</b></a>
+                <a href="blog.html" class="item"><b>Blog</b></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="ui secondary vertical sidebar menu" id="bgfade">
+        <div class="container">
+            <a href="ordernow.html" class="item" style="margin-top: 350px;">
+                <h3><b>Order Now</b></h3>
+            </a>
+            <a href="location.html" class="item">
+                <h3><b>Location<i class="dropdown icon"></i></b></h3>
+            </a>
+            <a href="usecase.html" class="item">
+                <h3><b>Use Case<i class="dropdown icon"></i></b></h3>
+            </a>
+            <a href="help.html" class="item">
+                <h3><b>Help</b></h3>
+            </a>
+            <a href="blog.html" class="item">
+                <h3><b>Blog</b></h3>
+            </a>
+        </div>
+    </div>
+
+    <!-- Page Contents -->
+    <div class="pusher">
+
+        <div class="ui vertical masthead center aligned segment">
+            <div class="ui container" id="custom2">
+                <div class="ui massive secondary menu">
+                    <a href="#" class="toc item" style="margin-right: 0px;">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a href="login.html" class="item" style="margin-left: 0px; font-size: 25px;">
+                        <i class="user circle icon"></i>
+                    </a>
+                    <div class="left menu">
+                        <a href="ordernow.html" class="item" id="item1"><b>Order Now</b></a>
+                        <div class="ui dropdown item" id="item1">
+                            <b>Location</b><i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a href="location.html" class="item">Location</a>
+                                <a href="medan.html" class="item">Medan</a>
+                                <a href="jaksel.html" class="item">Jakarta Selatan</a>
+                            </div>
+                        </div>
+                        <div class="ui dropdown item" id="item1">
+                            <b>Use Case</b><i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a href="usecase.html" class="item">Use Case</a>
+                                <a href="event.html" class="item">Event</a>
+                                <a href="meeting.html" class="item">Meeting</a>
+                                <a href="photoshoot.html" class="item">Photoshoot</a>
+                                <a href="videoshoot.html" class="item">Videoshoot</a>
+                            </div>
+                        </div>
+                        <a href="help.html" class="item" id="item1"><b>Help</b></a>
+                        <a href="blog.html" class="item" id="item1"><b>Blog</b></a>
+                    </div>
+
+                    <div class="right menu">
+                        <a href="https://api.whatsapp.com/send/?phone=6282127832456&text&type=phone_number&app_absent=0"
+                            class="item" id="item1"><b>Contact Us</b></a>
+                        <a href="homepage.html">
+                            <img class="ui right floated image"
+                                src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
+                                style="height: 35px; margin-top: 11px;">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="ui container" style="margin-top: 60px;">
+                <div class="ui one column centered grid">
+                    <div class="ui container">
+                        <div class="container">
+                            <center>
+                                <div id="map" style="height: 500px; width: 1000px; z-index: 1;"></div>
+                            </center>
+                        </div><br>
+
+                        <script>
+                            var map = L.map('map').setView([-6.315705422893728, 106.79345524571937], 18);
+                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                maxZoom: 25,
+                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                            }).addTo(map);
+                        </script>
+                        <hr>
+                        <div class="ui container" style="text-align: left; margin-top: 20px; margin-bottom: 60px;">
+                            <h1 style="font-size: 40px;">Use Case</h1>
+                            <div class="ui  large breadcrumb">
+                                <a href="homepage.html" class="section">Home</a>
+                                <i class="right angle icon divider"></i>
+                                <a href="usecase.html" class="section">Use Case</a>
+                                <i class="right angle icon divider"></i>
+                                <div class="active section">Videoshoot</div>
+                            </div><br><br><br>
+
+                            <div class="ui stackable two column grid">
+                                <div class="column">
+                                    <div class="ui stackable large form" style="border-radius: 0px;">
+                                        <div class="field">
+                                            <h3><b>Filter</b></h3>
+                                            <select class="ui fluid dropdown">
+                                                <option value="">Silahkan Pilih</option>
+                                                <option value="event">Event</option>
+                                                <option value="meeting">Meeting</option>
+                                                <option value="photoshoot">Photoshoot</option>
+                                                <option value="videoshoot">Videoshoot</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="ui stackable large form">
+                                        <div class="field">
+                                            <h3><b>Lokasi</b></h3>
+                                            <select class="ui fluid dropdown">
+                                                <option value="">Pilih Lokasi</option>
+                                                <option value="medan">Medan</option>
+                                                <option value="jaksel">Jakarta Selatan</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui stackable two column grid">
+                                <div class="column">
+                                    <div class="ui stackable large form" style="border-radius: 0px;">
+                                        <div class="field">
+                                            <h3><b>Kapasitas</b></h3>
+                                            <div class="ui range slider" id="slider-tooltip-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="ui stackable large form">
+                                        <div class="field">
+                                            <h3><b>Harga</b></h3>
+                                            <select class="ui fluid dropdown">
+                                                <option value="">Silahkan Pilih</option>
+                                                <option value="1">Rp 165.000 - Rp 999.000</option>
+                                                <option value="2">Rp 1.000.000 - Rp 1.999.000</option>
+                                                <option value="3">Rp 2.000.000 - Rp 2.999.000</option>
+                                                <option value="4">Rp 3.000.000 - Rp 3.999.000</option>
+                                                <option value="5">Rp 4.000.000 - Rp 4.999.000</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 style="color: #1c667f;"><b>VIDEOSHOOT</b></h1>
+
+                            <div class="ui equal width stackable grid">
+                                <div class="column" id="box6">
+                                    <div class="ui centered image">
+                                        <div class="ui large ribbon label" style="background-color: #f5c0bf;">
+                                            <div style="color: #1c667f; font-size: 17px;">Private Office</div>
+                                        </div>
+                                        <img src="../img/fern.png" alt="">
+                                    </div>
+                                    <div class="ui equal width grid">
+                                        <div class="column">
+                                            <h1 id="headmenu" style="margin-bottom: 0px;">Fern</h1><br>
+                                            <h4 style="margin-top: 0px; margin-bottom: 20px;">
+                                                <i class="user icon"></i>3 orang
+                                            </h4>
+                                        </div>
+                                        <div class="column">
+                                            <div id="headmenu2" style="text-align: right;"><i
+                                                    class="building icon"></i>Yafurni</div>
+                                        </div>
+                                    </div>
+                                    <p style="text-align: left; margin-bottom: 0px">Kawasan, Jl. DR. Ide Anak Agung Gde
+                                        Agung No.1,
+                                        RT.5/RW.2,
+                                        Kuningan, Kecamatan Setiabudi, 12950</p>
+                                    <h3 style="float: right; color: #cc6666; margin-top: 0px;"><b>IDR 650.000</b></h3>
+                                    <a href="">
+                                        <button class="ui centered button" id="custbutton7"><b>Hubungi Kami</b></button>
+                                    </a>
+                                </div>
+
+                                <div class="column" id="box6">
+                                    <div class="ui centered image">
+                                        <div class="ui large ribbon label" style="background-color: #f5c0bf;">
+                                            <div style="color: #1c667f; font-size: 17px;">Private Office</div>
+                                        </div>
+                                        <img src="../img/amber.png" alt="">
+                                    </div>
+                                    <div class="ui equal width grid">
+                                        <div class="column">
+                                            <h1 id="headmenu" style="margin-bottom: 0px;">Amber</h1><br>
+                                            <h4 style="margin-top: 0px; margin-bottom: 20px;">
+                                                <i class="user icon"></i>6 orang
+                                            </h4>
+                                        </div>
+                                        <div class="column">
+                                            <div id="headmenu2" style="text-align: right;"><i
+                                                    class="building icon"></i>Clapham</div>
+                                        </div>
+                                    </div>
+                                    <p style="text-align: left; margin-bottom: 0px">Kawasan, Jl. DR. Ide Anak Agung Gde
+                                        Agung No.1,
+                                        RT.5/RW.2,
+                                        Kuningan, Kecamatan Setiabudi, 12950</p>
+                                    <h3 style="float: right; color: #cc6666; margin-top: 0px;"><b>IDR 1.400.000</b>
+                                    </h3>
+                                    <a href="">
+                                        <button class="ui centered button" id="custbutton7"><b>Hubungi
+                                                Kami</b></button>
+                                    </a>
+                                </div>
+
+                                <div class="column" id="box6">
+                                    <div class="ui centered image">
+                                        <div class="ui large ribbon label" style="background-color: #f5c0bf;">
+                                            <div style="color: #1c667f; font-size: 17px;">Private Office</div>
+                                        </div>
+                                        <img src="../img/fern.png" alt="">
+                                    </div>
+                                    <div class="ui equal width grid">
+                                        <div class="column">
+                                            <h1 id="headmenu" style="margin-bottom: 0px;">Fern</h1><br>
+                                            <h4 style="margin-top: 0px; margin-bottom: 20px;">
+                                                <i class="user icon"></i>3 orang
+                                            </h4>
+                                        </div>
+                                        <div class="column">
+                                            <div id="headmenu2" style="text-align: right;"><i
+                                                    class="building icon"></i>Yafurni</div>
+                                        </div>
+                                    </div>
+                                    <p style="text-align: left; margin-bottom: 0px">Kawasan, Jl. DR. Ide Anak Agung Gde
+                                        Agung No.1,
+                                        RT.5/RW.2,
+                                        Kuningan, Kecamatan Setiabudi, 12950</p>
+                                    <h3 style="float: right; color: #cc6666; margin-top: 0px;"><b>IDR 650.000</b></h3>
+                                    <a href="">
+                                        <button class="ui centered button" id="custbutton7"><b>Hubungi
+                                                Kami</b></button>
+                                    </a>
+                                </div>
+
+
+                                <div class="column" id="box6">
+                                    <div class="ui centered image">
+                                        <div class="ui large ribbon label" style="background-color: #f5c0bf;">
+                                            <div style="color: #1c667f; font-size: 17px;">Private Office</div>
+                                        </div>
+                                        <img src="../img/amber.png" alt="">
+                                    </div>
+                                    <div class="ui equal width grid">
+                                        <div class="column">
+                                            <h1 id="headmenu" style="margin-bottom: 0px;">Amber</h1><br>
+                                            <h4 style="margin-top: 0px; margin-bottom: 20px;">
+                                                <i class="user icon"></i>6 orang
+                                            </h4>
+                                        </div>
+                                        <div class="column">
+                                            <div id="headmenu2" style="text-align: right;"><i
+                                                    class="building icon"></i>Clapham</div>
+                                        </div>
+                                    </div>
+                                    <p style="text-align: left; margin-bottom: 0px">Kawasan, Jl. DR. Ide Anak Agung
+                                        Gde
+                                        Agung No.1,
+                                        RT.5/RW.2,
+                                        Kuningan, Kecamatan Setiabudi, 12950</p>
+                                    <h3 style="float: right; color: #cc6666; margin-top: 0px;"><b>IDR 1.400.000</b>
+                                    </h3>
+                                    <a href="">
+                                        <button class="ui centered button" id="custbutton7"><b>Hubungi
+                                                Kami</b></button>
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                            <div class="ui equal width stackable grid">
+                                <div class="column" id="box6">
+                                    <div class="ui centered image">
+                                        <div class="ui large ribbon label" style="background-color: #f5c0bf;">
+                                            <div style="color: #1c667f; font-size: 17px;">Private Office</div>
+                                        </div>
+                                        <img src="../img/fern.png" alt="">
+                                    </div>
+                                    <div class="ui equal width grid">
+                                        <div class="column">
+                                            <h1 id="headmenu" style="margin-bottom: 0px;">Fern</h1><br>
+                                            <h4 style="margin-top: 0px; margin-bottom: 20px;">
+                                                <i class="user icon"></i>3 orang
+                                            </h4>
+                                        </div>
+                                        <div class="column">
+                                            <div id="headmenu2" style="text-align: right;"><i
+                                                    class="building icon"></i>Yafurni</div>
+                                        </div>
+                                    </div>
+                                    <p style="text-align: left; margin-bottom: 0px">Kawasan, Jl. DR. Ide Anak Agung Gde
+                                        Agung No.1,
+                                        RT.5/RW.2,
+                                        Kuningan, Kecamatan Setiabudi, 12950</p>
+                                    <h3 style="float: right; color: #cc6666; margin-top: 0px;"><b>IDR 650.000</b></h3>
+                                    <a href="">
+                                        <button class="ui centered button" id="custbutton7"><b>Hubungi Kami</b></button>
+                                    </a>
+                                </div>
+
+                                <div class="column" id="box6">
+                                    <div class="ui centered image">
+                                        <div class="ui large ribbon label" style="background-color: #f5c0bf;">
+                                            <div style="color: #1c667f; font-size: 17px;">Private Office</div>
+                                        </div>
+                                        <img src="../img/amber.png" alt="">
+                                    </div>
+                                    <div class="ui equal width grid">
+                                        <div class="column">
+                                            <h1 id="headmenu" style="margin-bottom: 0px;">Amber</h1><br>
+                                            <h4 style="margin-top: 0px; margin-bottom: 20px;">
+                                                <i class="user icon"></i>6 orang
+                                            </h4>
+                                        </div>
+                                        <div class="column">
+                                            <div id="headmenu2" style="text-align: right;"><i
+                                                    class="building icon"></i>Clapham</div>
+                                        </div>
+                                    </div>
+                                    <p style="text-align: left; margin-bottom: 0px">Kawasan, Jl. DR. Ide Anak Agung Gde
+                                        Agung No.1,
+                                        RT.5/RW.2,
+                                        Kuningan, Kecamatan Setiabudi, 12950</p>
+                                    <h3 style="float: right; color: #cc6666; margin-top: 0px;"><b>IDR 1.400.000</b>
+                                    </h3>
+                                    <a href="">
+                                        <button class="ui centered button" id="custbutton7"><b>Hubungi
+                                                Kami</b></button>
+                                    </a>
+                                </div>
+
+                                <div class="column" id="box6">
+                                    <div class="ui centered image">
+                                        <div class="ui large ribbon label" style="background-color: #f5c0bf;">
+                                            <div style="color: #1c667f; font-size: 17px;">Private Office</div>
+                                        </div>
+                                        <img src="../img/fern.png" alt="">
+                                    </div>
+                                    <div class="ui equal width grid">
+                                        <div class="column">
+                                            <h1 id="headmenu" style="margin-bottom: 0px;">Fern</h1><br>
+                                            <h4 style="margin-top: 0px; margin-bottom: 20px;">
+                                                <i class="user icon"></i>3 orang
+                                            </h4>
+                                        </div>
+                                        <div class="column">
+                                            <div id="headmenu2" style="text-align: right;"><i
+                                                    class="building icon"></i>Yafurni</div>
+                                        </div>
+                                    </div>
+                                    <p style="text-align: left; margin-bottom: 0px">Kawasan, Jl. DR. Ide Anak Agung Gde
+                                        Agung No.1,
+                                        RT.5/RW.2,
+                                        Kuningan, Kecamatan Setiabudi, 12950</p>
+                                    <h3 style="float: right; color: #cc6666; margin-top: 0px;"><b>IDR 650.000</b></h3>
+                                    <a href="">
+                                        <button class="ui centered button" id="custbutton7"><b>Hubungi
+                                                Kami</b></button>
+                                    </a>
+                                </div>
+
+
+                                <div class="column" id="box6">
+                                    <div class="ui centered image">
+                                        <div class="ui large ribbon label" style="background-color: #f5c0bf;">
+                                            <div style="color: #1c667f; font-size: 17px;">Private Office</div>
+                                        </div>
+                                        <img src="../img/amber.png" alt="">
+                                    </div>
+                                    <div class="ui equal width grid">
+                                        <div class="column">
+                                            <h1 id="headmenu" style="margin-bottom: 0px;">Amber</h1><br>
+                                            <h4 style="margin-top: 0px; margin-bottom: 20px;">
+                                                <i class="user icon"></i>6 orang
+                                            </h4>
+                                        </div>
+                                        <div class="column">
+                                            <div id="headmenu2" style="text-align: right;"><i
+                                                    class="building icon"></i>Clapham</div>
+                                        </div>
+                                    </div>
+                                    <p style="text-align: left; margin-bottom: 0px">Kawasan, Jl. DR. Ide Anak Agung
+                                        Gde
+                                        Agung No.1,
+                                        RT.5/RW.2,
+                                        Kuningan, Kecamatan Setiabudi, 12950</p>
+                                    <h3 style="float: right; color: #cc6666; margin-top: 0px;"><b>IDR 1.400.000</b>
+                                    </h3>
+                                    <a href="">
+                                        <button class="ui centered button" id="custbutton7"><b>Hubungi
+                                                Kami</b></button>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ui vertical footer segment" style="padding-top: 20px;">
+            <div class="ui container">
+                <div class="ui stackable equal height grid">
+                    <div class="four wide column" style="margin-right: 50px;">
+                        <img class="ui image" src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
+                            style="height: 35px; margin-top: 0px;">
+                        <div style="margin-top: 10px;">Komp. Ruko Centre Point Medan Jalan Timor Blok G No. III/IV 2nd
+                            Floor, Gang Buntu, Medan
+                            Timur, Medan City, North Sumatra 20231</div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui header" style="margin-top: 10px;">Location</h4>
+                        <div class="ui  link list">
+                            <a href="clapham.html" class="item">Clapham</a>
+                            <a href="the101.html" class="item">The 101</a>
+                            <a href="yafurni.html" class="item">Yafurni</a>
+                            <a href="kalingga.html" class="item">Kalingga</a>
+                            <a href="spasi.html" class="item">Spasi</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui header" style="margin-top: 10px;">Use Case</h4>
+                        <div class="ui  link list">
+                            <a href="event.html" class="item">Event</a>
+                            <a href="meeting.html" class="item">Meeting</a>
+                            <a href="photoshoot.html" class="item">Photoshoot</a>
+                            <a href="videoshoot.html" class="item">Videoshoot</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui header" style="margin-top: 10px;">Company</h4>
+                        <div class="ui  link list">
+                            <a href="https://api.whatsapp.com/send/?phone=6282127832456&text&type=phone_number&app_absent=0"
+                                class="item">Contact Us</a>
+                            <a href="blog.html" class="item">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js"></script>
+    <script src="visibility.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="transition.js"></script>
+    <script>
+        $(document)
+            .ready(function () {
+
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item');
+
+            });
+    </script>
+    <script>
+        $('.ui.dropdown')
+            .dropdown();
+
+        $('.menu .item').tab();
+
+        $('.ui.slider')
+            .slider({
+                showThumbTooltip: true,
+                min: 6,
+                max: 30,
+                start: 6,
+                end: 30,
+                step: 1,
+                tooltipConfig: {
+                    position: 'bottom center',
+                }
+            });
+    </script>
+</body>
+
+</html>

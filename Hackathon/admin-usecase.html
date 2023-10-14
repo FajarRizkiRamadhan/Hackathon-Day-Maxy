@@ -79,32 +79,108 @@
                                     style="float: right;"></i>
                             </button>
                         </a><br>
-                        <div class="container" style="background-color: #d9e9ef;">
-                            <br>
-                            <h1>List Use Case</h1>
-                            <div class="ui centered one column grid" style="padding-right: 100px;">
-                                <div class="column">
-                                    <table class="ui celled table"
-                                        style="margin: 50px; margin-top: 20px; padding: 0px;">
-                                        <thead style="text-align: center;">
-                                            <tr>
-                                                <th>Use Case</th>
-                                                <th>Jenis Properti</th>
-                                                <th>Jumlah</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td data-label="usecase"></td>
-                                                <td data-label="properti"></td>
-                                                <td data-label="jumlah"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                        <form class="ui huge form" style="text-align: left; margin: 50px; margin-bottom: 20px;">
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Name</label>
+                                        <input type="text" name="name">
+                                    </div>
+                                    <div class="field">
+                                        <label>Facility</label>
+                                        <input type="text" name="facility">
+                                    </div>
+                                </div>
+                            </div><br><br>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Location</label>
+                                        <input type="text" name="location">
+                                    </div>
+                                    <div class="field">
+                                        <label>City</label>
+                                        <input type="text" name="city">
+                                    </div>
                                 </div>
                             </div>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Province</label>
+                                        <input type="text" name="province">
+                                    </div>
+                                    <div class="field">
+                                        <label>Size</label>
+                                        <input type="text" name="size">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Capacity</label>
+                                        <input type="text" name="capacity">
+                                    </div>
+                                    <div class="field">
+                                        <label>Accomodate</label>
+                                        <input type="text" name="city">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Description</label>
+                                        <input type="text" name="description">
+                                    </div>
+                                    <div class="field">
+                                        <label>Prize</label>
+                                        <input type="text" name="prize">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Category</label>
+                                        <input type="text" name="category">
+                                    </div>
+                                    <div class="field">
+                                        <label>Sub Category</label>
+                                        <input type="text" name="subcategory">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Name Image</label>
+                                        <input type="text" name="nameimage">
+                                    </div>
+                                    <div class="field">
+                                        <label>Url Image</label>
+                                        <input type="text" name="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <label><b>Property Image</b></label>
+                            <div class="ui midde aligned center aligned grid container">
+                                <div class="ui fluid segment">
+                                    <input type="file" (change)="fileEvent($event)" class="inputfile"
+                                        id="embedpollfileinput" />
 
-                        </div>
+                                    <label for="embedpollfileinput" class="ui huge green right floated button">
+                                        <i class="ui upload icon"></i>
+                                        Upload image
+                                    </label>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="ui button"
+                                style="background-color: #cee0e6; color: #17667f; width: 200px; font-size: 17px;">
+                                Submit</div>
+                        </form>
                     </div>
                 </div>
             </div>

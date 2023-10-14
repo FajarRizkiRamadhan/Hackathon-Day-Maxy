@@ -8,20 +8,20 @@
     <title>Workfrom</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="web.css">
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-     <script>
-         window.dataLayer = window.dataLayer || [];
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-         function gtag() {
-             dataLayer.push(arguments);
-         }
-         gtag('js', new Date());
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-         gtag('config', 'G-4E6TG4R2SS');
-     </script>
+        gtag('config', 'G-4E6TG4R2SS');
+    </script>
 </head>
 
 <body>
@@ -132,26 +132,28 @@
             <div class="ui container" style="margin-top: 60px;">
                 <div class="ui one column centered grid">
                     <div class="ui container">
-                         <div class="container">
-                             <center>
-                                 <div id="map" style="height: 500px; width: 1000px; z-index: 1;"></div>
-                             </center>
-                         </div><br>
+                        <div class="container">
+                            <center>
+                                <div id="map" style="height: 500px; width: 1000px; z-index: 1;"></div>
+                            </center>
+                        </div><br>
 
-                         <script>
-                             var map = L.map('map').setView([-6.315705422893728, 106.79345524571937], 18);
-                             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                 maxZoom: 25,
-                                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                             }).addTo(map);
-                         </script>
+                        <script>
+                            var map = L.map('map').setView([-6.315705422893728, 106.79345524571937], 18);
+                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                maxZoom: 25,
+                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                            }).addTo(map);
+                        </script>
                         <hr>
                         <div class="ui container" style="text-align: left; margin-top: 20px; margin-bottom: 60px;">
                             <h1 style="font-size: 40px;">Locations</h1>
                             <div class="ui  large breadcrumb">
                                 <a href="homepage.html" class="section">Home</a>
                                 <i class="right angle icon divider"></i>
-                                <div class="active section">Location</div>
+                                <a href="location.html" class="section">Location</a>
+                                <i class="right angle icon divider"></i>
+                                <div class="active section">Jakarta Selatan</div>
                             </div><br><br><br>
 
                             <div class="ui stackable two column grid">
@@ -178,84 +180,25 @@
                             </div>
 
                             <div class="ui equal width stackable grid">
-                                <div class="column" id="box3">
-                                    <img class="ui centered image" src="../img/the101.png" alt="">
-                                    <div class="ui one column grid">
-                                        <h1 id="headmenu"><i class="building icon"></i>The 101</h1>
-                                        <p style="text-align: left;">Kawasan, Jl. DR. Ide Anak Agung Gde Agung No.1,
-                                            RT.5/RW.2,
-                                            Kuningan, Kecamatan Setiabudi, 12950</p>
-                                    </div>
-                                    <div class="ui one column centered grid">
-                                        <a href="the101.html">
-                                            <button class="ui centered button" id="custbutton5"
-                                               ><b>Pelajari Lebih Lanjut</b></button>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="column" id="box3">
-                                    <img class="ui centered image" src="../img/clapham.png" alt="">
-                                    <div class="ui  one column grid"></div>
-                                    <div class="ui one column grid">
-                                        <h1 id="headmenu"> <i class="building icon"></i>Clapham</h1>
-                                        <p style="text-align: left;">Komp. Ruko Centre Point Medan Jl. Timor Blok G No.
-                                            III/IV 2nd
-                                            Floor, Gang Buntu, Medan Timur, 20231</p>
-                                    </div>
-                                    <div class="ui one column centered grid">
-                                        <a href="clapham.html">
-                                            <button class="ui centered button" id="custbutton5"
-                                              ><b>Pelajari Lebih Lanjut</b></button>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="column" id="box3">
-                                    <img class="ui centered image" src="../img/spasi.png" alt="">
-                                    <div class="ui one column grid">
-                                        <h1 id="headmenu"><i class="building icon"></i>Spasi</h1>
-                                        <p style="text-align: left;">Komp. Ruko Centre Point Medan Jl. Timor Blok G No.
-                                            III/IV 2nd
-                                            Floor, Gang Buntu, Medan Timur, 20231</p>
-                                    </div>
-                                    <div class="ui one column centered grid">
-                                        <a href="spasi.html">
-                                            <button class="ui centered button" id="custbutton5"
-                                               ><b>Pelajari Lebih Lanjut</b></button>
-                                        </a>
-                                    </div>
-                                </div>
-
-
-                                <div class="column" id="box3">
-                                    <img class="ui centered image" src="../img/yafurni.png" alt="">
-                                    <div class="ui one column grid">
-                                        <h1 id="headmenu"><i class="building icon"></i>Yafurni</h1>
-                                        <p style="text-align: left;">Jl. Iskandar Muda No.7, Petisah Hulu, Kec. Medan
-                                            Baru, Kota
-                                            Medan, Sumatera Utara 20153</p>
-                                    </div>
-                                    <div class="ui one column centered grid" style="margin-top: 30px;">
-                                        <a href="yafurni.html">
-                                            <button class="ui centered button" id="custbutton5"
-                                               ><b>Pelajari Lebih Lanjut</b></button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ui one column centered stackable grid" style="padding-left: 410px; padding-right: 410px;">
-                                <div class="column" id="box3">
-                                    <img class="ui centered image" src="../img/kalingga.png" alt="">
-                                    <div class="ui one column grid">
-                                        <h1 id="headmenu"><i class="building icon"></i>Kalingga</h1>
-                                        <p style="text-align: left;">Jl. Kalingga No.14, Petisah Tengah, Kec. Medan
-                                            Petisah, Kota Medan, Sumatera Utara 20112</p>
-                                    </div>
-                                    <div class="ui one column centered grid" style="margin-top: 30px;">
-                                        <a href="kalingga.html">
-                                            <button class="ui centered button" id="custbutton5"><b>Pelajari Lebih
-                                                    Lanjut</b></button>
-                                        </a>
+                                <div class="ui one centered column grid" style="padding-left: 370px; padding-right: 370px;">
+                                    <div class="column">
+                                         <div class="column" id="box3" style="padding: 20px;">
+                                             <img class="ui centered image" src="../img/the101.png" alt="">
+                                             <div class="ui one column grid">
+                                                 <h1 id="headmenu"><i class="building icon"></i>The 101</h1>
+                                                 <p style="text-align: left;">Kawasan, Jl. DR. Ide Anak Agung Gde Agung
+                                                     No.1,
+                                                     RT.5/RW.2,
+                                                     Kuningan, Kecamatan Setiabudi, 12950</p>
+                                             </div>
+                                             <div class="ui one column centered grid">
+                                                 <a href="the101.html">
+                                                     <button class="ui centered button" id="custbutton5"><b>Pelajari
+                                                             Lebih
+                                                             Lanjut</b></button>
+                                                 </a>
+                                             </div>
+                                         </div>
                                     </div>
                                 </div>
                             </div>
